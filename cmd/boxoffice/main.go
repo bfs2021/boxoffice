@@ -21,6 +21,7 @@ import (
 	"github.com/yeixio/boxoffice/internal/alerts"
 	"github.com/yeixio/boxoffice/internal/announce"
 	"github.com/yeixio/boxoffice/internal/api"
+	"github.com/yeixio/boxoffice/internal/arrapi"
 	"github.com/yeixio/boxoffice/internal/backup"
 	"github.com/yeixio/boxoffice/internal/books"
 	"github.com/yeixio/boxoffice/internal/catalog"
@@ -28,6 +29,7 @@ import (
 	"github.com/yeixio/boxoffice/internal/downloader"
 	"github.com/yeixio/boxoffice/internal/ereader"
 	"github.com/yeixio/boxoffice/internal/games"
+	"github.com/yeixio/boxoffice/internal/homemedia"
 	"github.com/yeixio/boxoffice/internal/importer"
 	"github.com/yeixio/boxoffice/internal/jobs"
 	"github.com/yeixio/boxoffice/internal/kube"
@@ -199,6 +201,10 @@ func run() error {
 	// Games wanted are downloaded, checked against their system's list and
 	// copied into its folder.
 	libImporter.Games = gameShelf
+	// Home videos and photos are looked through when a root folder is
+	// added, on Scan, and twice a day.
+	homeShelf := &homemedia.Service{Store: db, Log: log, Dir: filepath.Join(cfg.DataDir, "home"), Places: cfg.HomePlaces,
+		Recycle: arrapi.RecycleTo, UserAgent: "BoxOffice/" + version.Version}
 	// The problem files look runs daily, and on Look again.
 	finds := &problems.Service{Store: db, Log: log}
 	// The quality check looks inside new files every few minutes.
@@ -216,6 +222,7 @@ func run() error {
 		Store: db, Catalog: cat, Music: tunes, LibScan: scanner, Problems: finds, QualityCheck: checker, Backups: backups, Migrator: &migrate.Migrator{Catalog: cat, Books: shelf, Backups: backups, Log: log, DataDir: cfg.DataDir}, Log: log,
 		Books:     shelf,
 		Games:     gameShelf,
+		Home:      homeShelf,
 		Imports:   imports,
 		Portal:    &portal.Service{Store: db, Catalog: cat, Notify: notes, Log: log},
 		Downloads: downloads, Search: finder,
@@ -260,7 +267,7 @@ func run() error {
 	var wg sync.WaitGroup
 	for _, loop := range []func(context.Context){runner.Run, backups.Run, downloads.Run, mon.Monitor.Run, alerter.Run,
 		func(ctx context.Context) { cat.RefreshEvery(ctx, cfg.Refresh) }, func(ctx context.Context) { finder.AutoSearchEvery(ctx, runner) },
-		finder.RSSEvery, finder.HeldEvery, finder.RegrabsEvery, finder.PruneEvery, shelf.DetailsEvery, finds.Run, checker.Run, subs.Run, gameShelf.Run, func(ctx context.Context) { api.RecycleSweepEvery(ctx, db, log) },
+		finder.RSSEvery, finder.HeldEvery, finder.RegrabsEvery, finder.PruneEvery, shelf.DetailsEvery, finds.Run, checker.Run, subs.Run, gameShelf.Run, homeShelf.Run, func(ctx context.Context) { api.RecycleSweepEvery(ctx, db, log) },
 		func(ctx context.Context) { retryImports(ctx, downloads, log) }} {
 		wg.Add(1)
 		go func() { defer wg.Done(); loop(ctx) }()

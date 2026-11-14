@@ -29,7 +29,8 @@
     "iconsOnly": "Icons only",
     "version": "Box Office {{version}}",
     "games": "Games",
-    "importFiles": "Import files"
+    "importFiles": "Import files",
+    "photos": "Photos and videos"
   },
   "app": {
     "notAnswering": "Box Office isn't answering: {{error}}",
@@ -1043,7 +1044,8 @@
       "series": "Scan looks for shows already in a folder that aren't on the list, so you can add them where they are.",
       "music": "Scan looks for artists already in a folder that aren't on the list, so you can add them where they are.",
       "books": "Scan looks for authors already in a folder that aren't on the list, so you can add them where they are.",
-      "game": "Check looks through this folder for each system's games, such as roms/mame and roms/snes, and checks them against MAME's and No-Intro's lists. It never changes your files."
+      "game": "Check looks through this folder for each system's games, such as roms/mame and roms/snes, and checks them against MAME's and No-Intro's lists. It never changes your files.",
+      "home": "Box Office looks through these folders for photos and videos when one is added, when you press Scan on the Photos and videos page, and twice a day. It never changes your files."
     },
     "newShows": "New shows",
     "newShowsSub": "Which episodes Box Office watches for when a show is added, here or by a request from Matinee. A long-running show can have hundreds of old episodes; watching only the last few seasons keeps the library patrol and upgrades on what you're likely to watch. You can still pick something else when adding a show, and switch seasons on or off from the show's page. Shows already on the list keep what they have.",
@@ -1163,7 +1165,8 @@
       "moving": "Moving the database…",
       "movingSub": "Box Office opens again once everything is copied and checked.",
       "moveTitle": "Move the database?"
-    }
+    },
+    "homeLayout": "Pick the folder your photos and videos are in, such as a share your phone backs up to. Any folders inside it are fine: Box Office reads the date each one was taken from the file itself."
   },
   "mediaTypes": {
     "music": {
@@ -1185,6 +1188,10 @@
     "game": {
       "name": "Games",
       "summary": "See your video game collection: arcade sets from MAME and console games, checked and with box art."
+    },
+    "home": {
+      "name": "Home videos and photos",
+      "summary": "Keep your own photos and videos in one place: a timeline, albums made for you, and copies found."
     }
   },
   "conn": {
@@ -2484,6 +2491,115 @@
       "missing": "Not found yet; looking again {{when}}",
       "waiting": "Found; downloading {{when}}",
       "pending": "Not looked up yet"
+    }
+  },
+  "home": {
+    "sub": "{{photos}} and {{videos}}, {{size}}",
+    "photos_one": "{{count}} photo",
+    "photos_other": "{{count}} photos",
+    "videos_one": "{{count}} video",
+    "videos_other": "{{count}} videos",
+    "items_one": "{{count}} photo or video",
+    "items_other": "{{count}} photos and videos",
+    "scanAgain": "Scan",
+    "none": "No photos or videos yet",
+    "noneBody": "Box Office keeps your own photos and videos in one place. It reads when and where each was taken, puts the ones taken together into albums, and finds copies of the same photo. It doesn't change your files.",
+    "addRoot": "Add the folder your photos and videos are in under <link>Settings → Home videos and photos root folders</link>.",
+    "nothingFound": "No photos or videos found",
+    "nothingFoundBody": "Box Office didn't find any photos or videos in your root folders. Check the folder has them in, then press Scan.",
+    "noneOfKind": "None of these yet.",
+    "tab": {
+      "timeline": "Timeline",
+      "albums": "Albums",
+      "copies": "Copies"
+    },
+    "scan": {
+      "finding": "Looking for photos and videos…",
+      "reading": "Reading photos and videos and making thumbnails…",
+      "places": "Naming the places they were taken…",
+      "albums": "Putting photos taken together into albums…",
+      "count": "{{done}} of {{total}}",
+      "skipped": "Box Office couldn't look in all of {{folders}}, so it kept everything it had from there.",
+      "failed_one": "{{count}} file couldn't be read.",
+      "failed_other": "{{count}} files couldn't be read."
+    },
+    "kind": {
+      "label": "Show",
+      "all": "All",
+      "photos": "Photos",
+      "videos": "Videos",
+      "photo": "Photo",
+      "video": "Video"
+    },
+    "pick": "Select",
+    "pickDay": "Select the day",
+    "picked_one": "{{count}} selected",
+    "picked_other": "{{count}} selected",
+    "addToAlbum": "Add to album",
+    "addTitle_one": "Add {{count}} to an album",
+    "addTitle_other": "Add {{count}} to an album",
+    "view": {
+      "info": "Info",
+      "previous": "Previous",
+      "next": "Next",
+      "camera": "Camera",
+      "size": "Size",
+      "file": "File",
+      "folder": "Folder",
+      "inAlbums": "In albums",
+      "download": "Download the original",
+      "guessedDate": "The file didn't say when it was taken, so this is when the file was last changed.",
+      "cantShow": "Your browser can't show this kind of photo.",
+      "cantPlay": "Your browser can't play this video. Download it to watch it, or play it in Matinee."
+    },
+    "album": {
+      "untitled": "Album",
+      "label": "Album",
+      "new": "New album",
+      "name": "Name",
+      "nameHint": "Such as Garden 2024 or Grandma's 80th.",
+      "newHint": "Such as Garden 2024 or Grandma's 80th. Add photos to it from the timeline: press Select, pick them, then Add to album.",
+      "make": "Make album",
+      "yours": "Your albums",
+      "noneYours": "None yet. Make one, or select photos on the timeline and add them to one.",
+      "events": "Made by Box Office",
+      "eventsSub": "Photos and videos taken together, such as a day out or a trip, found from when and where they were taken.",
+      "noneEvents": "None yet. Box Office makes one from 8 or more photos taken on the same day out or trip.",
+      "rename": "Rename",
+      "renameEventHint": "Leave it empty to show {{name}} again.",
+      "delete": "Delete album",
+      "deleteTitle": "Delete this album?",
+      "deleteBody": "{{name}} is deleted. Its photos and videos stay where they are, on the timeline and on disk.",
+      "hide": "Put away",
+      "hideTitle": "Put this album away?",
+      "hideBody": "It leaves the list of albums and Box Office won't make it again. Its photos and videos stay where they are.",
+      "unhide": "Bring back",
+      "hiddenNote": "This album is put away. Bring it back to list it with the others again.",
+      "eventNote": "Box Office made this album from photos taken together. Rename it to keep a name of your own.",
+      "takeOut": "Take out of album",
+      "emptyTitle": "This album is empty",
+      "emptyBody": "Go to the <link>timeline</link>, press Select, pick photos and videos, then Add to album."
+    },
+    "copies": {
+      "intro": "The same photo or video kept more than once. Box Office keeps the biggest copy of each and ticks the others. Moved copies go to the root folder's .recycle folder, so you can get them back until it's emptied.",
+      "none": "No copies found",
+      "noneBody": "Every photo and video is kept only once.",
+      "same": "Same file",
+      "alike": "Looks the same",
+      "groups_one": "{{count}} photo or video kept more than once",
+      "groups_other": "{{count}} photos and videos kept more than once",
+      "ticked_one": "{{count}} copy ticked, {{size}}",
+      "ticked_other": "{{count}} copies ticked, {{size}}",
+      "keep": "Kept",
+      "moveThis": "Move to recycle folder",
+      "look": "Look at {{name}}",
+      "move": "Move to recycle folder",
+      "confirmTitle": "Move these copies?",
+      "confirmBody_one": "{{count}} copy, {{size}}, goes to its root folder's .recycle folder.",
+      "confirmBody_other": "{{count}} copies, {{size}}, go to their root folder's .recycle folder.",
+      "confirmNote": "One copy of each photo and video stays where it is. Empty the recycle folders in Settings to free the space.",
+      "moved_one": "{{count}} copy moved to the recycle folder, {{size}}.",
+      "moved_other": "{{count}} copies moved to the recycle folder, {{size}}."
     }
   }
 }

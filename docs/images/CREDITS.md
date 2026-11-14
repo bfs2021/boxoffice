@@ -32,3 +32,5 @@ The screenshots in the README show Box Office with a demo library of public-doma
 | The Hound of the Baskervilles (1902) cover | | Public domain | [Cover (Hound of Baskervilles, 1902).jpg](https://commons.wikimedia.org/wiki/File:Cover_%28Hound_of_Baskervilles%2C_1902%29.jpg) |
 
 Public-domain status is as recorded on each file's Commons page, for the United States. Character names such as Superman, Popeye, Felix the Cat and Flash Gordon may still be trademarks of their owners; the cartoons and episodes shown are in the public domain.
+
+The photos in `photos.webp` are drawn by a script for the screenshot (painted skies, beaches, towns and gardens); they aren't anyone's photos.

@@ -32,7 +32,7 @@ const isSection = (s: string | null | undefined): s is SectionId => sectionIds.i
 type CardDef = { id: string; el: ReactNode; keys?: string[]; terms?: string[]; inner?: boolean }
 type SectionDef = { id: SectionId | 'elsewhere'; cards: CardDef[] }
 
-const mediaKinds: MediaTypeKey[] = ['music', 'audiobook', 'ebook', 'comic', 'game']
+const mediaKinds: MediaTypeKey[] = ['music', 'audiobook', 'ebook', 'comic', 'game', 'home']
 
 const sections: SectionDef[] = [
   {
@@ -609,6 +609,7 @@ function RootFolders({ kind, type }: { kind: RootKind; type?: MediaType }) {
       </ul>
       {kind === 'game' && !!folders.data?.length && <p className="mt-2 text-xs text-muted">{t('settings.scanFor.game')}</p>}
       {kind === 'game' && !folders.data?.length && <p className="mt-2 text-xs text-muted">{t('settings.gameLayout')}</p>}
+      {kind === 'home' && <p className="mt-2 text-xs text-muted">{t(folders.data?.length ? 'settings.scanFor.home' : 'settings.homeLayout')}</p>}
       {scannable(kind) && !!folders.data?.length && (
         <p className="mt-2 text-xs text-muted">{t(`settings.scanFor.${kind === 'movie' || kind === 'series' || kind === 'music' ? kind : 'books'}`)}</p>
       )}

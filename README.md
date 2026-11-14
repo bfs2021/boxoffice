@@ -94,6 +94,10 @@ Open http://localhost:7272 and make the admin account. To have it file things in
 
 - **Sorts and filters** movies and shows by title, rating, size on disk, date added, and for shows by the next or last episode, remembered per list.
 - **Import files you already have.** **Import files** takes uploads from your browser (files or whole folders) or files picked from a folder on the server, works out whether each is a movie, an episode or season, an album, a book or games, and files it in the library, adding the title first if it isn't on your list. Any guess can be changed before it goes in. See [Importing files](docs/import.md).
+- **Home videos and photos.** Turn on **Home videos and photos** in Settings and give it the folders your pictures and home videos are in: **Photos and videos** shows them all newest first, by month and day, with when and where each was taken and on what camera (from EXIF, the video's own date or the file's name), iPhone HEIC and raw photos included. Box Office makes albums for days out and trips by itself, you make your own, and **Copies** finds photos kept twice, even a smaller copy sent through WhatsApp, to move to the recycle folder. It never changes your files otherwise. See [Home videos and photos](docs/home-media.md).
+
+  <img src="docs/images/photos.webp" width="70%" alt="The Photos and videos timeline: a trip's beach and city photos and a video under their day">
+
 - **Ebooks straight to your e-reader.** Each ebook Box Office downloads can be emailed to your Kindle, PocketBook or any reader with an email address, as soon as it's in the library. See [Sending ebooks to e-readers](docs/ereaders.md).
 - **Health.** A check-up of the things that stop Box Office working (disks, folders it can't write to, indexers, news servers), live charts of the processor, memory, requests and download speed, the log with a debug switch, and alerts. Prometheus metrics are at `/metrics` once you make a token.
 - **Backups** of its database on a schedule, to its own disk and optionally to another folder (such as a NAS share) or S3-compatible storage (AWS S3, Backblaze B2, Cloudflare R2, MinIO). A passphrase encrypts them. Restore from the Backups page.
@@ -260,6 +264,7 @@ Most settings live in the web UI under **Settings**. The server itself takes a f
 | `BOXOFFICE_OPENLIBRARY_URL` | | `https://openlibrary.org` | Another Open Library to look books up on, if you run one |
 | `BOXOFFICE_WIKIDATA_URL` | | `https://query.wikidata.org` | Another Wikidata query service for author photos and book series, or `off` to use Open Library's only |
 | `BOXOFFICE_MAME_RELEASES_URL`, `BOXOFFICE_LIBRETRO_DB_URL`, `BOXOFFICE_GAME_ART_URL` | | MAME's releases on GitHub, libretro's database and thumbnails | Other copies of the game lists and box art the Games section uses. See [Games](docs/games.md) |
+| `BOXOFFICE_PLACES_URL` | | GeoNames' `cities15000.zip` | Another copy of the list of towns photos' places are named from (a URL or a file), or `off`. See [Home videos and photos](docs/home-media.md#places) |
 | `BOXOFFICE_EBOOK_CONVERT` | | `ebook-convert` on the `PATH`, if there | Calibre's `ebook-convert`, so ebooks a Kindle won't take by email (AZW3, MOBI) are turned into EPUB before they're sent. See [Sending ebooks to e-readers](docs/ereaders.md) |
 | `BOXOFFICE_LOG_FORMAT` | `-log-format` | `text` | `text` or `json` |
 | `BOXOFFICE_DEBUG` | `-debug` | off | Log more. The Health page can also switch debug logging on and off while it runs |

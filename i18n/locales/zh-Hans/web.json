@@ -27,7 +27,8 @@
     "iconsOnly": "仅图标",
     "version": "Box Office {{version}}",
     "games": "游戏",
-    "importFiles": "导入文件"
+    "importFiles": "导入文件",
+    "photos": "照片和视频"
   },
   "app": {
     "notAnswering": "Box Office 没有响应：{{error}}",
@@ -969,7 +970,8 @@
       "series": "扫描会查找文件夹中已有但不在列表中的剧集，让你原地添加。",
       "music": "扫描会查找文件夹中已有但不在列表中的艺人，让你原地添加。",
       "books": "扫描会查找文件夹中已有但不在列表中的作者，让你原地添加。",
-      "game": "检查会在这个文件夹里查找每个系统的游戏，比如 roms/mame 和 roms/snes，并与 MAME 和 No-Intro 的列表核对。它从不改动你的文件。"
+      "game": "检查会在这个文件夹里查找每个系统的游戏，比如 roms/mame 和 roms/snes，并与 MAME 和 No-Intro 的列表核对。它从不改动你的文件。",
+      "home": "添加文件夹时、在照片和视频页面按下扫描时，以及每天两次，Box Office 都会在这些文件夹中查找照片和视频。它从不更改你的文件。"
     },
     "newShows": "新剧集",
     "newShowsSub": "添加剧集时（在这里或通过 Matinee 的请求）Box Office 关注哪些集。长期连载的剧集可能有数百集旧内容；只关注最近几季，可让媒体库巡检和升级集中在你可能会看的内容上。添加剧集时仍可另选，也可以在剧集页面开关各季。已在列表中的剧集保持不变。",
@@ -1086,7 +1088,8 @@
       "moving": "正在迁移数据库…",
       "movingSub": "全部复制并检查完毕后,Box Office 会重新打开。",
       "moveTitle": "要迁移数据库吗?"
-    }
+    },
+    "homeLayout": "选择存放照片和视频的文件夹，例如手机备份到的共享文件夹。里面有子文件夹也没关系：Box Office 会从文件本身读取拍摄日期。"
   },
   "mediaTypes": {
     "music": {
@@ -1108,6 +1111,10 @@
     "game": {
       "name": "游戏",
       "summary": "查看你的电子游戏收藏：MAME 街机套装和主机游戏，经过检查并配有封面。"
+    },
+    "home": {
+      "name": "家庭视频和照片",
+      "summary": "把你自己拍的照片和视频放在一处：时间线、为你自动整理的相册，以及找到的重复副本。"
     }
   },
   "conn": {
@@ -2371,6 +2378,105 @@
       "missing": "尚未找到；{{when}} 再次查找",
       "waiting": "已找到；{{when}} 下载",
       "pending": "尚未查找"
+    }
+  },
+  "home": {
+    "sub": "{{photos}}、{{videos}}，{{size}}",
+    "photos_other": "{{count}} 张照片",
+    "videos_other": "{{count}} 个视频",
+    "items_other": "{{count}} 张照片和视频",
+    "scanAgain": "扫描",
+    "none": "还没有照片或视频",
+    "noneBody": "Box Office 把你自己拍的照片和视频放在一处。它读取每一张的拍摄时间和地点，把一起拍的整理成相册，并找出同一张照片的副本。它不会更改你的文件。",
+    "addRoot": "在<link>设置 → 家庭视频和照片根文件夹</link>中添加存放照片和视频的文件夹。",
+    "nothingFound": "没有找到照片或视频",
+    "nothingFoundBody": "Box Office 在你的根文件夹中没有找到照片或视频。请确认文件夹里有它们，然后按扫描。",
+    "noneOfKind": "还没有这一类。",
+    "tab": {
+      "timeline": "时间线",
+      "albums": "相册",
+      "copies": "副本"
+    },
+    "scan": {
+      "finding": "正在查找照片和视频…",
+      "reading": "正在读取照片和视频并生成缩略图…",
+      "places": "正在为拍摄地点命名…",
+      "albums": "正在把一起拍的照片整理成相册…",
+      "count": "{{done}} / {{total}}",
+      "skipped": "Box Office 无法查看 {{folders}} 中的全部内容，因此保留了它已知道的所有内容。",
+      "failed_other": "有 {{count}} 个文件无法读取。"
+    },
+    "kind": {
+      "label": "显示",
+      "all": "全部",
+      "photos": "照片",
+      "videos": "视频",
+      "photo": "照片",
+      "video": "视频"
+    },
+    "pick": "选择",
+    "pickDay": "选择这一天",
+    "picked_other": "已选择 {{count}} 项",
+    "addToAlbum": "添加到相册",
+    "addTitle_other": "将 {{count}} 项添加到相册",
+    "view": {
+      "info": "信息",
+      "previous": "上一张",
+      "next": "下一张",
+      "camera": "相机",
+      "size": "尺寸",
+      "file": "文件",
+      "folder": "文件夹",
+      "inAlbums": "所在相册",
+      "download": "下载原始文件",
+      "guessedDate": "文件没有说明拍摄时间，所以这里显示的是文件最后修改的时间。",
+      "cantShow": "你的浏览器无法显示这种照片。",
+      "cantPlay": "你的浏览器无法播放这个视频。请下载后观看，或在 Matinee 中播放。"
+    },
+    "album": {
+      "untitled": "相册",
+      "label": "相册",
+      "new": "新建相册",
+      "name": "名称",
+      "nameHint": "例如“花园 2024”或“奶奶的八十大寿”。",
+      "newHint": "例如“花园 2024”或“奶奶的八十大寿”。从时间线添加照片：按选择，选好照片，然后按添加到相册。",
+      "make": "创建相册",
+      "yours": "你的相册",
+      "noneYours": "还没有。新建一个相册，或在时间线上选择照片并添加到相册。",
+      "events": "Box Office 整理的相册",
+      "eventsSub": "一起拍的照片和视频，比如一次出游或旅行，根据拍摄时间和地点找出。",
+      "noneEvents": "还没有。Box Office 会用同一次出游或旅行中的 8 张或更多照片整理出一个相册。",
+      "rename": "重命名",
+      "renameEventHint": "留空则重新显示 {{name}}。",
+      "delete": "删除相册",
+      "deleteTitle": "删除这个相册？",
+      "deleteBody": "将删除 {{name}}。其中的照片和视频仍留在原处，时间线和磁盘上都在。",
+      "hide": "收起",
+      "hideTitle": "收起这个相册？",
+      "hideBody": "它会从相册列表中移除，Box Office 也不会再整理出它。其中的照片和视频仍留在原处。",
+      "unhide": "恢复",
+      "hiddenNote": "这个相册已收起。恢复后会重新和其他相册一起显示。",
+      "eventNote": "这个相册是 Box Office 用一起拍的照片整理出来的。重命名即可保留你自己取的名字。",
+      "takeOut": "移出相册",
+      "emptyTitle": "这个相册是空的",
+      "emptyBody": "前往<link>时间线</link>，按选择，选好照片和视频，然后按添加到相册。"
+    },
+    "copies": {
+      "intro": "同一张照片或同一个视频被保存了不止一次。Box Office 会为每一项保留最大的副本，并勾选其余副本。移走的副本会进入根文件夹的 .recycle 文件夹，在清空之前都可以找回。",
+      "none": "没有找到副本",
+      "noneBody": "每张照片和每个视频都只保存了一次。",
+      "same": "相同文件",
+      "alike": "看起来一样",
+      "groups_other": "{{count}} 项照片和视频被保存了不止一次",
+      "ticked_other": "已勾选 {{count}} 个副本，{{size}}",
+      "keep": "保留",
+      "moveThis": "移到回收文件夹",
+      "look": "查看 {{name}}",
+      "move": "移到回收文件夹",
+      "confirmTitle": "移走这些副本？",
+      "confirmBody_other": "{{count}} 个副本（{{size}}）将进入其根文件夹的 .recycle 文件夹。",
+      "confirmNote": "每张照片和每个视频都会有一份留在原处。在设置中清空回收文件夹即可释放空间。",
+      "moved_other": "已将 {{count}} 个副本移到回收文件夹，{{size}}。"
     }
   }
 }

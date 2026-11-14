@@ -27,7 +27,8 @@
     "iconsOnly": "Chỉ biểu tượng",
     "version": "Box Office {{version}}",
     "games": "Trò chơi",
-    "importFiles": "Nhập tệp"
+    "importFiles": "Nhập tệp",
+    "photos": "Ảnh và video"
   },
   "app": {
     "notAnswering": "Box Office không phản hồi: {{error}}",
@@ -969,7 +970,8 @@
       "series": "Quét tìm các chương trình đã có trong thư mục nhưng chưa có trong danh sách, để bạn có thể thêm chúng tại chỗ.",
       "music": "Quét tìm các nghệ sĩ đã có trong thư mục nhưng chưa có trong danh sách, để bạn có thể thêm họ tại chỗ.",
       "books": "Quét tìm các tác giả đã có trong thư mục nhưng chưa có trong danh sách, để bạn có thể thêm họ tại chỗ.",
-      "game": "Kiểm tra sẽ tìm trong thư mục này trò chơi của từng hệ máy, chẳng hạn roms/mame và roms/snes, rồi đối chiếu với danh sách của MAME và No-Intro. Tệp của bạn không bao giờ bị thay đổi."
+      "game": "Kiểm tra sẽ tìm trong thư mục này trò chơi của từng hệ máy, chẳng hạn roms/mame và roms/snes, rồi đối chiếu với danh sách của MAME và No-Intro. Tệp của bạn không bao giờ bị thay đổi.",
+      "home": "Box Office tìm ảnh và video trong các thư mục này khi một thư mục được thêm, khi bạn nhấn Quét trên trang Ảnh và video, và hai lần mỗi ngày. Nó không bao giờ thay đổi tệp của bạn."
     },
     "newShows": "Chương trình mới",
     "newShowsSub": "Box Office theo dõi những tập nào khi một chương trình được thêm, ở đây hoặc qua yêu cầu từ Matinee. Chương trình chiếu lâu có thể có hàng trăm tập cũ; chỉ theo dõi vài mùa gần nhất giúp tuần tra thư viện và nâng cấp tập trung vào những gì bạn có thể sẽ xem. Bạn vẫn có thể chọn khác khi thêm chương trình, và bật hoặc tắt mùa từ trang của chương trình. Chương trình đã có trong danh sách giữ nguyên thiết lập.",
@@ -1086,7 +1088,8 @@
       "moving": "Đang chuyển cơ sở dữ liệu…",
       "movingSub": "Box Office mở lại khi mọi thứ đã được sao chép và kiểm tra.",
       "moveTitle": "Chuyển cơ sở dữ liệu?"
-    }
+    },
+    "homeLayout": "Chọn thư mục chứa ảnh và video của bạn, chẳng hạn một thư mục chia sẻ mà điện thoại sao lưu vào. Thư mục con không sao: Box Office đọc ngày chụp từ chính tệp."
   },
   "mediaTypes": {
     "music": {
@@ -1108,6 +1111,10 @@
     "game": {
       "name": "Trò chơi",
       "summary": "Xem bộ sưu tập trò chơi điện tử của bạn: các bộ arcade từ MAME và trò chơi máy console, đã được kiểm tra và có ảnh bìa."
+    },
+    "home": {
+      "name": "Video và ảnh gia đình",
+      "summary": "Giữ ảnh và video của riêng bạn ở một nơi: dòng thời gian, album được tạo sẵn cho bạn và các bản sao được tìm thấy."
     }
   },
   "conn": {
@@ -2371,6 +2378,105 @@
       "missing": "Chưa tìm thấy; tìm lại {{when}}",
       "waiting": "Đã tìm thấy; tải {{when}}",
       "pending": "Chưa tra cứu"
+    }
+  },
+  "home": {
+    "sub": "{{photos}} và {{videos}}, {{size}}",
+    "photos_other": "{{count}} ảnh",
+    "videos_other": "{{count}} video",
+    "items_other": "{{count}} ảnh và video",
+    "scanAgain": "Quét",
+    "none": "Chưa có ảnh hay video nào",
+    "noneBody": "Box Office giữ ảnh và video của riêng bạn ở một nơi. Nó đọc thời gian và địa điểm chụp của từng cái, gom những cái chụp cùng nhau vào album và tìm các bản sao của cùng một ảnh. Nó không thay đổi tệp của bạn.",
+    "addRoot": "Thêm thư mục ảnh và video của bạn trong <link>Cài đặt → Thư mục gốc video và ảnh gia đình</link>.",
+    "nothingFound": "Không tìm thấy ảnh hay video nào",
+    "nothingFoundBody": "Box Office không tìm thấy ảnh hay video nào trong các thư mục gốc của bạn. Kiểm tra xem thư mục có chứa chúng không, rồi nhấn Quét.",
+    "noneOfKind": "Chưa có loại này.",
+    "tab": {
+      "timeline": "Dòng thời gian",
+      "albums": "Album",
+      "copies": "Bản sao"
+    },
+    "scan": {
+      "finding": "Đang tìm ảnh và video…",
+      "reading": "Đang đọc ảnh và video và tạo hình thu nhỏ…",
+      "places": "Đang đặt tên cho nơi chụp…",
+      "albums": "Đang gom ảnh chụp cùng nhau vào album…",
+      "count": "{{done}} / {{total}}",
+      "skipped": "Box Office không xem được hết {{folders}}, nên nó giữ lại mọi thứ đã biết từ đó.",
+      "failed_other": "Không đọc được {{count}} tệp."
+    },
+    "kind": {
+      "label": "Hiển thị",
+      "all": "Tất cả",
+      "photos": "Ảnh",
+      "videos": "Video",
+      "photo": "Ảnh",
+      "video": "Video"
+    },
+    "pick": "Chọn",
+    "pickDay": "Chọn cả ngày",
+    "picked_other": "Đã chọn {{count}}",
+    "addToAlbum": "Thêm vào album",
+    "addTitle_other": "Thêm {{count}} vào album",
+    "view": {
+      "info": "Thông tin",
+      "previous": "Trước",
+      "next": "Tiếp",
+      "camera": "Máy ảnh",
+      "size": "Kích thước",
+      "file": "Tệp",
+      "folder": "Thư mục",
+      "inAlbums": "Trong album",
+      "download": "Tải bản gốc",
+      "guessedDate": "Tệp không cho biết thời gian chụp, nên đây là lúc tệp được thay đổi lần cuối.",
+      "cantShow": "Trình duyệt của bạn không hiển thị được loại ảnh này.",
+      "cantPlay": "Trình duyệt của bạn không phát được video này. Hãy tải xuống để xem, hoặc phát trong Matinee."
+    },
+    "album": {
+      "untitled": "Album",
+      "label": "Album",
+      "new": "Album mới",
+      "name": "Tên",
+      "nameHint": "Ví dụ Khu vườn 2024 hoặc Sinh nhật 80 của bà.",
+      "newHint": "Ví dụ Khu vườn 2024 hoặc Sinh nhật 80 của bà. Thêm ảnh từ dòng thời gian: nhấn Chọn, chọn ảnh rồi nhấn Thêm vào album.",
+      "make": "Tạo album",
+      "yours": "Album của bạn",
+      "noneYours": "Chưa có. Hãy tạo một album, hoặc chọn ảnh trên dòng thời gian và thêm vào album.",
+      "events": "Do Box Office tạo",
+      "eventsSub": "Ảnh và video chụp cùng nhau, như một chuyến đi chơi hay du lịch, được tìm theo thời gian và địa điểm chụp.",
+      "noneEvents": "Chưa có. Box Office tạo album từ 8 ảnh trở lên của cùng một chuyến đi chơi hay du lịch.",
+      "rename": "Đổi tên",
+      "renameEventHint": "Để trống để hiển thị lại {{name}}.",
+      "delete": "Xóa album",
+      "deleteTitle": "Xóa album này?",
+      "deleteBody": "{{name}} sẽ bị xóa. Ảnh và video trong đó vẫn ở nguyên chỗ, trên dòng thời gian và trên đĩa.",
+      "hide": "Cất đi",
+      "hideTitle": "Cất album này đi?",
+      "hideBody": "Album rời khỏi danh sách album và Box Office sẽ không tạo lại nó. Ảnh và video trong đó vẫn ở nguyên chỗ.",
+      "unhide": "Đưa trở lại",
+      "hiddenNote": "Album này đã được cất đi. Đưa nó trở lại để hiện cùng các album khác.",
+      "eventNote": "Box Office tạo album này từ những ảnh chụp cùng nhau. Đổi tên để giữ một cái tên của riêng bạn.",
+      "takeOut": "Bỏ khỏi album",
+      "emptyTitle": "Album này trống",
+      "emptyBody": "Vào <link>dòng thời gian</link>, nhấn Chọn, chọn ảnh và video rồi nhấn Thêm vào album."
+    },
+    "copies": {
+      "intro": "Cùng một ảnh hay video được lưu nhiều lần. Box Office giữ bản lớn nhất của mỗi cái và đánh dấu các bản còn lại. Các bản sao được chuyển sẽ vào thư mục .recycle của thư mục gốc, nên bạn có thể lấy lại cho đến khi nó được dọn sạch.",
+      "none": "Không tìm thấy bản sao",
+      "noneBody": "Mỗi ảnh và video chỉ được lưu một lần.",
+      "same": "Cùng tệp",
+      "alike": "Trông giống nhau",
+      "groups_other": "{{count}} ảnh và video được lưu nhiều lần",
+      "ticked_other": "Đã đánh dấu {{count}} bản sao, {{size}}",
+      "keep": "Được giữ",
+      "moveThis": "Chuyển vào thư mục tái chế",
+      "look": "Xem {{name}}",
+      "move": "Chuyển vào thư mục tái chế",
+      "confirmTitle": "Chuyển các bản sao này?",
+      "confirmBody_other": "{{count}} bản sao, {{size}}, sẽ vào thư mục .recycle của thư mục gốc.",
+      "confirmNote": "Một bản của mỗi ảnh và video vẫn ở nguyên chỗ. Dọn sạch các thư mục tái chế trong Cài đặt để giải phóng dung lượng.",
+      "moved_other": "Đã chuyển {{count}} bản sao vào thư mục tái chế, {{size}}."
     }
   }
 }

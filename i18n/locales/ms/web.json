@@ -27,7 +27,8 @@
     "iconsOnly": "Ikon sahaja",
     "version": "Box Office {{version}}",
     "games": "Permainan",
-    "importFiles": "Import fail"
+    "importFiles": "Import fail",
+    "photos": "Foto dan video"
   },
   "app": {
     "notAnswering": "Box Office tidak menjawab: {{error}}",
@@ -969,7 +970,8 @@
       "series": "Imbas mencari rancangan yang sudah ada dalam folder tetapi belum dalam senarai, supaya anda boleh menambahnya di tempatnya.",
       "music": "Imbas mencari artis yang sudah ada dalam folder tetapi belum dalam senarai, supaya anda boleh menambahnya di tempatnya.",
       "books": "Imbas mencari pengarang yang sudah ada dalam folder tetapi belum dalam senarai, supaya anda boleh menambahnya di tempatnya.",
-      "game": "Semak meneliti folder ini untuk permainan setiap sistem, seperti roms/mame dan roms/snes, dan menyemaknya dengan senarai MAME dan No-Intro. Fail anda tidak sekali-kali diubah."
+      "game": "Semak meneliti folder ini untuk permainan setiap sistem, seperti roms/mame dan roms/snes, dan menyemaknya dengan senarai MAME dan No-Intro. Fail anda tidak sekali-kali diubah.",
+      "home": "Box Office mencari foto dan video dalam folder ini apabila folder ditambah, apabila anda menekan Imbas di halaman Foto dan video, dan dua kali sehari. Fail anda tidak pernah diubah."
     },
     "newShows": "Rancangan baharu",
     "newShowsSub": "Episod mana yang dipantau Box Office apabila rancangan ditambah, di sini atau melalui permintaan dari Matinee. Rancangan yang lama bersiaran boleh mempunyai ratusan episod lama; memantau hanya beberapa musim terakhir mengekalkan rondaan pustaka dan naik taraf pada yang mungkin anda tonton. Anda masih boleh memilih yang lain semasa menambah rancangan, dan menghidupkan atau mematikan musim dari halaman rancangan. Rancangan yang sudah dalam senarai kekal seperti asal.",
@@ -1086,7 +1088,8 @@
       "moving": "Memindahkan pangkalan data…",
       "movingSub": "Box Office dibuka semula sebaik sahaja semuanya disalin dan disemak.",
       "moveTitle": "Pindahkan pangkalan data?"
-    }
+    },
+    "homeLayout": "Pilih folder tempat foto dan video anda berada, contohnya folder kongsi tempat telefon anda membuat sandaran. Subfolder tidak menjadi masalah: Box Office membaca tarikh setiap satu daripada fail itu sendiri."
   },
   "mediaTypes": {
     "music": {
@@ -1108,6 +1111,10 @@
     "game": {
       "name": "Permainan",
       "summary": "Lihat koleksi permainan video anda: set arked daripada MAME dan permainan konsol, sudah disemak dan dengan seni kotak."
+    },
+    "home": {
+      "name": "Video dan foto keluarga",
+      "summary": "Simpan foto dan video anda sendiri di satu tempat: garis masa, album yang dibuat untuk anda dan salinan yang ditemui."
     }
   },
   "conn": {
@@ -2371,6 +2378,105 @@
       "missing": "Belum ditemui; dicari semula {{when}}",
       "waiting": "Ditemui; dimuat turun {{when}}",
       "pending": "Belum dicari"
+    }
+  },
+  "home": {
+    "sub": "{{photos}} dan {{videos}}, {{size}}",
+    "photos_other": "{{count}} foto",
+    "videos_other": "{{count}} video",
+    "items_other": "{{count}} foto dan video",
+    "scanAgain": "Imbas",
+    "none": "Belum ada foto atau video",
+    "noneBody": "Box Office menyimpan foto dan video anda sendiri di satu tempat. Ia membaca bila dan di mana setiap satu diambil, mengumpulkan yang diambil bersama ke dalam album dan menemui salinan foto yang sama. Fail anda tidak diubah.",
+    "addRoot": "Tambah folder foto dan video anda di <link>Tetapan → Folder akar video dan foto keluarga</link>.",
+    "nothingFound": "Tiada foto atau video ditemui",
+    "nothingFoundBody": "Box Office tidak menemui foto atau video dalam folder akar anda. Pastikan folder itu mengandunginya, kemudian tekan Imbas.",
+    "noneOfKind": "Belum ada yang seperti ini.",
+    "tab": {
+      "timeline": "Garis masa",
+      "albums": "Album",
+      "copies": "Salinan"
+    },
+    "scan": {
+      "finding": "Mencari foto dan video…",
+      "reading": "Membaca foto dan video serta membuat imej kecil…",
+      "places": "Menamakan tempat ia diambil…",
+      "albums": "Mengumpulkan foto yang diambil bersama ke dalam album…",
+      "count": "{{done}} daripada {{total}}",
+      "skipped": "Box Office tidak dapat menyemak semua dalam {{folders}}, jadi ia menyimpan semua yang sudah diketahuinya dari situ.",
+      "failed_other": "{{count}} fail tidak dapat dibaca."
+    },
+    "kind": {
+      "label": "Tunjukkan",
+      "all": "Semua",
+      "photos": "Foto",
+      "videos": "Video",
+      "photo": "Foto",
+      "video": "Video"
+    },
+    "pick": "Pilih",
+    "pickDay": "Pilih sepanjang hari",
+    "picked_other": "{{count}} dipilih",
+    "addToAlbum": "Tambah ke album",
+    "addTitle_other": "Tambah {{count}} ke album",
+    "view": {
+      "info": "Maklumat",
+      "previous": "Sebelumnya",
+      "next": "Seterusnya",
+      "camera": "Kamera",
+      "size": "Saiz",
+      "file": "Fail",
+      "folder": "Folder",
+      "inAlbums": "Dalam album",
+      "download": "Muat turun yang asal",
+      "guessedDate": "Fail tidak menyatakan bila ia diambil, jadi ini ialah masa fail terakhir diubah.",
+      "cantShow": "Pelayar anda tidak dapat menunjukkan jenis foto ini.",
+      "cantPlay": "Pelayar anda tidak dapat memainkan video ini. Muat turun untuk menontonnya, atau mainkan di Matinee."
+    },
+    "album": {
+      "untitled": "Album",
+      "label": "Album",
+      "new": "Album baharu",
+      "name": "Nama",
+      "nameHint": "Contohnya Taman 2024 atau Hari jadi ke-80 Nenek.",
+      "newHint": "Contohnya Taman 2024 atau Hari jadi ke-80 Nenek. Tambah foto dari garis masa: tekan Pilih, pilih foto, kemudian Tambah ke album.",
+      "make": "Buat album",
+      "yours": "Album anda",
+      "noneYours": "Belum ada. Buat satu, atau pilih foto di garis masa dan tambahkannya ke album.",
+      "events": "Dibuat oleh Box Office",
+      "eventsSub": "Foto dan video yang diambil bersama, seperti bersiar-siar atau percutian, ditemui daripada bila dan di mana ia diambil.",
+      "noneEvents": "Belum ada. Box Office membuat album daripada 8 foto atau lebih dari lawatan atau percutian yang sama.",
+      "rename": "Namakan semula",
+      "renameEventHint": "Biarkan kosong untuk menunjukkan {{name}} semula.",
+      "delete": "Padam album",
+      "deleteTitle": "Padam album ini?",
+      "deleteBody": "{{name}} akan dipadam. Foto dan videonya kekal di tempatnya, dalam garis masa dan pada cakera.",
+      "hide": "Simpan ke tepi",
+      "hideTitle": "Simpan album ini ke tepi?",
+      "hideBody": "Album ini keluar dari senarai album dan Box Office tidak akan membuatnya lagi. Foto dan videonya kekal di tempatnya.",
+      "unhide": "Kembalikan",
+      "hiddenNote": "Album ini disimpan ke tepi. Kembalikannya supaya ia muncul bersama yang lain semula.",
+      "eventNote": "Box Office membuat album ini daripada foto yang diambil bersama. Namakan semula untuk mengekalkan nama pilihan anda.",
+      "takeOut": "Keluarkan dari album",
+      "emptyTitle": "Album ini kosong",
+      "emptyBody": "Pergi ke <link>garis masa</link>, tekan Pilih, pilih foto dan video, kemudian Tambah ke album."
+    },
+    "copies": {
+      "intro": "Foto atau video yang sama disimpan lebih daripada sekali. Box Office mengekalkan salinan terbesar bagi setiap satu dan menandakan yang lain. Salinan yang dipindahkan masuk ke folder .recycle dalam folder akar, jadi anda boleh mendapatkannya semula sehingga ia dikosongkan.",
+      "none": "Tiada salinan ditemui",
+      "noneBody": "Setiap foto dan video hanya disimpan sekali.",
+      "same": "Fail yang sama",
+      "alike": "Kelihatan sama",
+      "groups_other": "{{count}} foto dan video disimpan lebih daripada sekali",
+      "ticked_other": "{{count}} salinan ditandakan, {{size}}",
+      "keep": "Dikekalkan",
+      "moveThis": "Pindahkan ke folder kitar semula",
+      "look": "Lihat {{name}}",
+      "move": "Pindahkan ke folder kitar semula",
+      "confirmTitle": "Pindahkan salinan ini?",
+      "confirmBody_other": "{{count}} salinan, {{size}}, akan masuk ke folder .recycle dalam folder akarnya.",
+      "confirmNote": "Satu salinan bagi setiap foto dan video kekal di tempatnya. Kosongkan folder kitar semula dalam Tetapan untuk mengosongkan ruang.",
+      "moved_other": "{{count}} salinan dipindahkan ke folder kitar semula, {{size}}."
     }
   }
 }

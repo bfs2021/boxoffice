@@ -1,5 +1,6 @@
 // Package mediatypes lists the kinds of media Box Office looks after beyond
-// movies and TV (music, audiobooks, ebooks, comics and games) and says which of
+// movies and TV (music, audiobooks, ebooks, comics, games, and home
+// videos and photos) and says which of
 // them an admin has turned on. Each one is off until it's turned on in
 // Settings; while it's off, Box Office takes no root folders for it, shows
 // no pages for it and searches for nothing of it.
@@ -35,6 +36,7 @@ const (
 	Ebook     = "ebook"
 	Comic     = "comic"
 	Game      = "game"
+	Home      = "home"
 )
 
 // All lists the types in the order Settings shows them.
@@ -54,6 +56,9 @@ var All = []Type{
 	{Key: Game, Name: "Games",
 		Summary: "See your video game collection: arcade sets from MAME and console games, checked and with box art.",
 		Folders: []string{"/media/games", "/data/media/games", "/media/roms", "/data/media/roms", "/games", "/roms"}},
+	{Key: Home, Name: "Home videos and photos",
+		Summary: "Keep your own photos and videos in one place: a timeline, albums made for you, and copies found.",
+		Folders: []string{"/media/photos", "/data/media/photos", "/media/pictures", "/media/home-videos", "/media/home", "/photos", "/pictures"}},
 }
 
 // Lookup finds a type by its key.

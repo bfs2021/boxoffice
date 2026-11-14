@@ -31,7 +31,8 @@
     "iconsOnly": "Só ícones",
     "version": "Box Office {{version}}",
     "games": "Jogos",
-    "importFiles": "Importar arquivos"
+    "importFiles": "Importar arquivos",
+    "photos": "Fotos e vídeos"
   },
   "app": {
     "notAnswering": "O Box Office não está respondendo: {{error}}",
@@ -1117,7 +1118,8 @@
       "series": "A varredura procura séries que já estão em uma pasta mas não na lista, para você adicioná-las onde estão.",
       "music": "A varredura procura artistas que já estão em uma pasta mas não na lista, para você adicioná-los onde estão.",
       "books": "A varredura procura autores que já estão em uma pasta mas não na lista, para você adicioná-los onde estão.",
-      "game": "Verificar procura nesta pasta os jogos de cada sistema, como roms/mame e roms/snes, e os compara com as listas do MAME e do No-Intro. Seus arquivos nunca são alterados."
+      "game": "Verificar procura nesta pasta os jogos de cada sistema, como roms/mame e roms/snes, e os compara com as listas do MAME e do No-Intro. Seus arquivos nunca são alterados.",
+      "home": "O Box Office procura fotos e vídeos nestas pastas quando uma é adicionada, quando você toca em Verificar na página Fotos e vídeos, e duas vezes por dia. Ele nunca altera seus arquivos."
     },
     "newShows": "Novas séries",
     "newShowsSub": "Quais episódios o Box Office monitora quando uma série é adicionada, aqui ou por um pedido do Matinee. Uma série longa pode ter centenas de episódios antigos; monitorar só as últimas temporadas mantém a ronda da biblioteca e as melhorias no que você provavelmente vai assistir. Você ainda pode escolher outra coisa ao adicionar uma série, e ativar ou desativar temporadas na página da série. Séries que já estão na lista mantêm o que têm.",
@@ -1240,7 +1242,8 @@
       "moving": "Movendo o banco de dados…",
       "movingSub": "O Box Office abre de novo assim que tudo for copiado e conferido.",
       "moveTitle": "Mover o banco de dados?"
-    }
+    },
+    "homeLayout": "Escolha a pasta onde estão suas fotos e vídeos, como um compartilhamento para onde o celular faz backup. Subpastas não são problema: o Box Office lê a data de cada um no próprio arquivo."
   },
   "mediaTypes": {
     "music": {
@@ -1262,6 +1265,10 @@
     "game": {
       "name": "Jogos",
       "summary": "Veja sua coleção de videogames: sets de arcade do MAME e jogos de console, verificados e com capa."
+    },
+    "home": {
+      "name": "Vídeos e fotos caseiros",
+      "summary": "Guarde suas próprias fotos e vídeos em um só lugar: uma linha do tempo, álbuns criados para você e as cópias encontradas."
     }
   },
   "conn": {
@@ -2597,6 +2604,125 @@
       "missing": "Ainda não encontrada; nova busca {{when}}",
       "waiting": "Encontrada; download {{when}}",
       "pending": "Ainda não pesquisada"
+    }
+  },
+  "home": {
+    "sub": "{{photos}} e {{videos}}, {{size}}",
+    "photos_many": "{{count}} fotos",
+    "photos_one": "{{count}} foto",
+    "photos_other": "{{count}} fotos",
+    "videos_many": "{{count}} vídeos",
+    "videos_one": "{{count}} vídeo",
+    "videos_other": "{{count}} vídeos",
+    "items_many": "{{count}} fotos e vídeos",
+    "items_one": "{{count}} foto ou vídeo",
+    "items_other": "{{count}} fotos e vídeos",
+    "scanAgain": "Verificar",
+    "none": "Ainda não há fotos nem vídeos",
+    "noneBody": "O Box Office guarda suas próprias fotos e vídeos em um só lugar. Ele lê quando e onde cada um foi feito, junta em álbuns os que foram feitos juntos e encontra cópias da mesma foto. Ele não altera seus arquivos.",
+    "addRoot": "Adicione a pasta das suas fotos e vídeos em <link>Configurações → Pastas raiz de vídeos e fotos caseiros</link>.",
+    "nothingFound": "Nenhuma foto ou vídeo encontrado",
+    "nothingFoundBody": "O Box Office não encontrou fotos nem vídeos nas suas pastas raiz. Confira se a pasta tem algum e toque em Verificar.",
+    "noneOfKind": "Nenhum deste tipo ainda.",
+    "tab": {
+      "timeline": "Linha do tempo",
+      "albums": "Álbuns",
+      "copies": "Cópias"
+    },
+    "scan": {
+      "finding": "Procurando fotos e vídeos…",
+      "reading": "Lendo fotos e vídeos e criando miniaturas…",
+      "places": "Dando nome aos lugares onde foram feitos…",
+      "albums": "Juntando em álbuns as fotos feitas juntas…",
+      "count": "{{done}} de {{total}}",
+      "skipped": "O Box Office não conseguiu olhar tudo em {{folders}}, então manteve tudo o que já tinha de lá.",
+      "failed_many": "{{count}} arquivos não puderam ser lidos.",
+      "failed_one": "{{count}} arquivo não pôde ser lido.",
+      "failed_other": "{{count}} arquivos não puderam ser lidos."
+    },
+    "kind": {
+      "label": "Mostrar",
+      "all": "Tudo",
+      "photos": "Fotos",
+      "videos": "Vídeos",
+      "photo": "Foto",
+      "video": "Vídeo"
+    },
+    "pick": "Selecionar",
+    "pickDay": "Selecionar o dia",
+    "picked_many": "{{count}} selecionados",
+    "picked_one": "{{count}} selecionado",
+    "picked_other": "{{count}} selecionados",
+    "addToAlbum": "Adicionar a um álbum",
+    "addTitle_many": "Adicionar {{count}} a um álbum",
+    "addTitle_one": "Adicionar {{count}} a um álbum",
+    "addTitle_other": "Adicionar {{count}} a um álbum",
+    "view": {
+      "info": "Informações",
+      "previous": "Anterior",
+      "next": "Próximo",
+      "camera": "Câmera",
+      "size": "Tamanho",
+      "file": "Arquivo",
+      "folder": "Pasta",
+      "inAlbums": "Nos álbuns",
+      "download": "Baixar o original",
+      "guessedDate": "O arquivo não diz quando foi feito, então esta é a data da última alteração do arquivo.",
+      "cantShow": "Seu navegador não consegue mostrar este tipo de foto.",
+      "cantPlay": "Seu navegador não consegue reproduzir este vídeo. Baixe-o para assistir ou reproduza-o no Matinee."
+    },
+    "album": {
+      "untitled": "Álbum",
+      "label": "Álbum",
+      "new": "Novo álbum",
+      "name": "Nome",
+      "nameHint": "Por exemplo, Jardim 2024 ou 80 anos da vovó.",
+      "newHint": "Por exemplo, Jardim 2024 ou 80 anos da vovó. Adicione fotos pela linha do tempo: toque em Selecionar, escolha-as e depois Adicionar a um álbum.",
+      "make": "Criar álbum",
+      "yours": "Seus álbuns",
+      "noneYours": "Nenhum ainda. Crie um ou selecione fotos na linha do tempo e adicione-as a um álbum.",
+      "events": "Criados pelo Box Office",
+      "eventsSub": "Fotos e vídeos feitos juntos, como um passeio ou uma viagem, encontrados pela data e pelo lugar em que foram feitos.",
+      "noneEvents": "Nenhum ainda. O Box Office cria um com 8 fotos ou mais do mesmo passeio ou viagem.",
+      "rename": "Renomear",
+      "renameEventHint": "Deixe vazio para mostrar {{name}} de novo.",
+      "delete": "Excluir álbum",
+      "deleteTitle": "Excluir este álbum?",
+      "deleteBody": "{{name}} será excluído. As fotos e os vídeos dele ficam onde estão, na linha do tempo e no disco.",
+      "hide": "Guardar",
+      "hideTitle": "Guardar este álbum?",
+      "hideBody": "Ele sai da lista de álbuns e o Box Office não vai criá-lo de novo. As fotos e os vídeos dele ficam onde estão.",
+      "unhide": "Trazer de volta",
+      "hiddenNote": "Este álbum está guardado. Traga-o de volta para que apareça com os outros.",
+      "eventNote": "O Box Office criou este álbum com fotos feitas juntas. Renomeie-o para manter um nome seu.",
+      "takeOut": "Tirar do álbum",
+      "emptyTitle": "Este álbum está vazio",
+      "emptyBody": "Vá para a <link>linha do tempo</link>, toque em Selecionar, escolha fotos e vídeos e depois Adicionar a um álbum."
+    },
+    "copies": {
+      "intro": "A mesma foto ou vídeo guardado mais de uma vez. O Box Office mantém a maior cópia de cada um e marca as outras. As cópias movidas vão para a pasta .recycle da pasta raiz, então você pode recuperá-las até ela ser esvaziada.",
+      "none": "Nenhuma cópia encontrada",
+      "noneBody": "Cada foto e vídeo está guardado uma vez só.",
+      "same": "Mesmo arquivo",
+      "alike": "Parece igual",
+      "groups_many": "{{count}} fotos e vídeos guardados mais de uma vez",
+      "groups_one": "{{count}} foto ou vídeo guardado mais de uma vez",
+      "groups_other": "{{count}} fotos e vídeos guardados mais de uma vez",
+      "ticked_many": "{{count}} cópias marcadas, {{size}}",
+      "ticked_one": "{{count}} cópia marcada, {{size}}",
+      "ticked_other": "{{count}} cópias marcadas, {{size}}",
+      "keep": "Mantida",
+      "moveThis": "Mover para a lixeira",
+      "look": "Ver {{name}}",
+      "move": "Mover para a lixeira",
+      "confirmTitle": "Mover estas cópias?",
+      "confirmBody_many": "{{count}} cópias, {{size}}, vão para a pasta .recycle da sua pasta raiz.",
+      "confirmBody_one": "{{count}} cópia, {{size}}, vai para a pasta .recycle da sua pasta raiz.",
+      "confirmBody_other": "{{count}} cópias, {{size}}, vão para a pasta .recycle da sua pasta raiz.",
+      "confirmNote": "Uma cópia de cada foto e vídeo fica onde está. Esvazie as lixeiras nas Configurações para liberar o espaço.",
+      "moved_many": "{{count}} cópias movidas para a lixeira, {{size}}.",
+      "moved_one": "{{count}} cópia movida para a lixeira, {{size}}.",
+      "moved_other": "{{count}} cópias movidas para a lixeira, {{size}}."
     }
   }
 }

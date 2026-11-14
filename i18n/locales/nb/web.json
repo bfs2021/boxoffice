@@ -29,7 +29,8 @@
     "iconsOnly": "Bare ikoner",
     "version": "Box Office {{version}}",
     "games": "Spill",
-    "importFiles": "Importer filer"
+    "importFiles": "Importer filer",
+    "photos": "Bilder og videoer"
   },
   "app": {
     "notAnswering": "Box Office svarer ikke: {{error}}",
@@ -1043,7 +1044,8 @@
       "series": "Skanning ser etter serier som allerede er i en mappe, men ikke på listen, så du kan legge dem til der de er.",
       "music": "Skanning ser etter artister som allerede er i en mappe, men ikke på listen, så du kan legge dem til der de er.",
       "books": "Skanning ser etter forfattere som allerede er i en mappe, men ikke på listen, så du kan legge dem til der de er.",
-      "game": "Sjekk går gjennom denne mappen etter hvert systems spill, for eksempel roms/mame og roms/snes, og sjekker dem mot listene til MAME og No-Intro. Filene dine endres aldri."
+      "game": "Sjekk går gjennom denne mappen etter hvert systems spill, for eksempel roms/mame og roms/snes, og sjekker dem mot listene til MAME og No-Intro. Filene dine endres aldri.",
+      "home": "Box Office ser etter bilder og videoer i disse mappene når en legges til, når du trykker på Gå gjennom på siden Bilder og videoer, og to ganger om dagen. Filene dine endres aldri."
     },
     "newShows": "Nye serier",
     "newShowsSub": "Hvilke episoder Box Office overvåker når en serie legges til, her eller via et ønske fra Matinee. En langvarig serie kan ha hundrevis av gamle episoder; å overvåke bare de siste sesongene holder bibliotekpatruljen og oppgraderingene til det du sannsynligvis kommer til å se. Du kan fortsatt velge noe annet når du legger til en serie, og slå sesonger av eller på fra seriens side. Serier som allerede er på listen, beholder det de har.",
@@ -1163,7 +1165,8 @@
       "moving": "Flytter databasen…",
       "movingSub": "Box Office åpner igjen når alt er kopiert og sjekket.",
       "moveTitle": "Flytte databasen?"
-    }
+    },
+    "homeLayout": "Velg mappen der bildene og videoene dine ligger, for eksempel en delt mappe telefonen tar sikkerhetskopi til. Undermapper går fint: Box Office leser når hvert bilde ble tatt fra selve filen."
   },
   "mediaTypes": {
     "music": {
@@ -1185,6 +1188,10 @@
     "game": {
       "name": "Spill",
       "summary": "Se samlingen din av videospill: arkadesett fra MAME og konsollspill, sjekket og med coverbilder."
+    },
+    "home": {
+      "name": "Egne videoer og bilder",
+      "summary": "Samle dine egne bilder og videoer på ett sted: en tidslinje, album som lages for deg, og kopier som er funnet."
     }
   },
   "conn": {
@@ -2484,6 +2491,115 @@
       "missing": "Ikke funnet ennå; søker igjen {{when}}",
       "waiting": "Funnet; lastes ned {{when}}",
       "pending": "Ikke slått opp ennå"
+    }
+  },
+  "home": {
+    "sub": "{{photos}} og {{videos}}, {{size}}",
+    "photos_one": "{{count}} bilde",
+    "photos_other": "{{count}} bilder",
+    "videos_one": "{{count}} video",
+    "videos_other": "{{count}} videoer",
+    "items_one": "{{count}} bilde eller video",
+    "items_other": "{{count}} bilder og videoer",
+    "scanAgain": "Gå gjennom",
+    "none": "Ingen bilder eller videoer ennå",
+    "noneBody": "Box Office samler dine egne bilder og videoer på ett sted. Den leser når og hvor hvert bilde ble tatt, legger bilder som ble tatt sammen i album og finner kopier av det samme bildet. Filene dine endres ikke.",
+    "addRoot": "Legg til mappen med bildene og videoene dine under <link>Innstillinger → Rotmapper for egne videoer og bilder</link>.",
+    "nothingFound": "Fant ingen bilder eller videoer",
+    "nothingFoundBody": "Box Office fant ingen bilder eller videoer i rotmappene dine. Sjekk at mappen inneholder noen, og trykk så på Gå gjennom.",
+    "noneOfKind": "Ingen slike ennå.",
+    "tab": {
+      "timeline": "Tidslinje",
+      "albums": "Album",
+      "copies": "Kopier"
+    },
+    "scan": {
+      "finding": "Ser etter bilder og videoer…",
+      "reading": "Leser bilder og videoer og lager miniatyrbilder…",
+      "places": "Gir navn til stedene de ble tatt…",
+      "albums": "Legger bilder tatt sammen i album…",
+      "count": "{{done}} av {{total}}",
+      "skipped": "Box Office fikk ikke sett overalt i {{folders}}, så den beholdt alt den allerede hadde derfra.",
+      "failed_one": "{{count}} fil kunne ikke leses.",
+      "failed_other": "{{count}} filer kunne ikke leses."
+    },
+    "kind": {
+      "label": "Vis",
+      "all": "Alle",
+      "photos": "Bilder",
+      "videos": "Videoer",
+      "photo": "Bilde",
+      "video": "Video"
+    },
+    "pick": "Velg",
+    "pickDay": "Velg hele dagen",
+    "picked_one": "{{count}} valgt",
+    "picked_other": "{{count}} valgt",
+    "addToAlbum": "Legg til i album",
+    "addTitle_one": "Legg {{count}} til i et album",
+    "addTitle_other": "Legg {{count}} til i et album",
+    "view": {
+      "info": "Info",
+      "previous": "Forrige",
+      "next": "Neste",
+      "camera": "Kamera",
+      "size": "Størrelse",
+      "file": "Fil",
+      "folder": "Mappe",
+      "inAlbums": "I album",
+      "download": "Last ned originalen",
+      "guessedDate": "Filen sier ikke når den ble tatt, så dette er når filen sist ble endret.",
+      "cantShow": "Nettleseren din kan ikke vise denne typen bilde.",
+      "cantPlay": "Nettleseren din kan ikke spille av denne videoen. Last den ned for å se den, eller spill den av i Matinee."
+    },
+    "album": {
+      "untitled": "Album",
+      "label": "Album",
+      "new": "Nytt album",
+      "name": "Navn",
+      "nameHint": "For eksempel Hagen 2024 eller Mormors 80-årsdag.",
+      "newHint": "For eksempel Hagen 2024 eller Mormors 80-årsdag. Legg til bilder fra tidslinjen: trykk på Velg, velg dem og deretter Legg til i album.",
+      "make": "Lag album",
+      "yours": "Dine album",
+      "noneYours": "Ingen ennå. Lag et, eller velg bilder på tidslinjen og legg dem til i et.",
+      "events": "Laget av Box Office",
+      "eventsSub": "Bilder og videoer tatt sammen, for eksempel en utflukt eller en reise, funnet ut fra når og hvor de ble tatt.",
+      "noneEvents": "Ingen ennå. Box Office lager et av 8 eller flere bilder fra samme utflukt eller reise.",
+      "rename": "Gi nytt navn",
+      "renameEventHint": "La feltet stå tomt for å vise {{name}} igjen.",
+      "delete": "Slett album",
+      "deleteTitle": "Slette dette albumet?",
+      "deleteBody": "{{name}} slettes. Bildene og videoene blir der de er, på tidslinjen og på disken.",
+      "hide": "Legg bort",
+      "hideTitle": "Legge bort dette albumet?",
+      "hideBody": "Det forsvinner fra listen over album, og Box Office lager det ikke på nytt. Bildene og videoene blir der de er.",
+      "unhide": "Hent fram",
+      "hiddenNote": "Dette albumet er lagt bort. Hent det fram for å vise det sammen med de andre igjen.",
+      "eventNote": "Box Office laget dette albumet av bilder tatt sammen. Gi det nytt navn for å beholde et eget navn.",
+      "takeOut": "Fjern fra albumet",
+      "emptyTitle": "Dette albumet er tomt",
+      "emptyBody": "Gå til <link>tidslinjen</link>, trykk på Velg, velg bilder og videoer og deretter Legg til i album."
+    },
+    "copies": {
+      "intro": "Det samme bildet eller den samme videoen lagret mer enn én gang. Box Office beholder den største kopien av hver og huker av de andre. Flyttede kopier havner i rotmappens .recycle-mappe, så du kan få dem tilbake til den tømmes.",
+      "none": "Fant ingen kopier",
+      "noneBody": "Hvert bilde og hver video er bare lagret én gang.",
+      "same": "Samme fil",
+      "alike": "Ser lik ut",
+      "groups_one": "{{count}} bilde eller video lagret mer enn én gang",
+      "groups_other": "{{count}} bilder og videoer lagret mer enn én gang",
+      "ticked_one": "{{count}} kopi avhuket, {{size}}",
+      "ticked_other": "{{count}} kopier avhuket, {{size}}",
+      "keep": "Beholdes",
+      "moveThis": "Flytt til papirkurvmappen",
+      "look": "Se på {{name}}",
+      "move": "Flytt til papirkurvmappen",
+      "confirmTitle": "Flytte disse kopiene?",
+      "confirmBody_one": "{{count}} kopi, {{size}}, flyttes til rotmappens .recycle-mappe.",
+      "confirmBody_other": "{{count}} kopier, {{size}}, flyttes til rotmappenes .recycle-mapper.",
+      "confirmNote": "Én kopi av hvert bilde og hver video blir der den er. Tøm papirkurvmappene i Innstillinger for å frigjøre plassen.",
+      "moved_one": "{{count}} kopi flyttet til papirkurvmappen, {{size}}.",
+      "moved_other": "{{count}} kopier flyttet til papirkurvmappen, {{size}}."
     }
   }
 }

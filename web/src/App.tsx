@@ -19,6 +19,7 @@ import { AuthorPage, BookLink, Books } from './pages/Books'
 import { AlbumLink, ArtistDetail } from './pages/ArtistDetail'
 import { AddGame } from './pages/GameAdd'
 import { GamePage, Games, GameSystemPage } from './pages/Games'
+import { AlbumPage, Photos } from './pages/Photos'
 import { Calendar } from './pages/Calendar'
 import { Activity } from './pages/Activity'
 import { Downloads } from './pages/Downloads'
@@ -107,6 +108,8 @@ function Shell({ status }: { status: Status }) {
           <Route path="/games/add" element={<AddGame />} />
           <Route path="/games/:id" element={<GameSystemPage />} />
           <Route path="/games/game/:id" element={<GamePage />} />
+          <Route path="/photos" element={<Photos />} />
+          <Route path="/photos/albums/:id" element={<AlbumPage />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/requests" element={<Requests />} />
           <Route path="/downloads" element={<Downloads />} />

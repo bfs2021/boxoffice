@@ -29,7 +29,8 @@
     "iconsOnly": "Nur Symbole",
     "version": "Box Office {{version}}",
     "games": "Spiele",
-    "importFiles": "Dateien importieren"
+    "importFiles": "Dateien importieren",
+    "photos": "Fotos und Videos"
   },
   "app": {
     "notAnswering": "Box Office antwortet nicht: {{error}}",
@@ -1043,7 +1044,8 @@
       "series": "Scannen sucht nach Serien, die schon in einem Ordner liegen, aber nicht auf der Liste stehen, damit du sie dort hinzufügen kannst, wo sie sind.",
       "music": "Scannen sucht nach Künstlern, die schon in einem Ordner liegen, aber nicht auf der Liste stehen, damit du sie dort hinzufügen kannst, wo sie sind.",
       "books": "Scannen sucht nach Autoren, die schon in einem Ordner liegen, aber nicht auf der Liste stehen, damit du sie dort hinzufügen kannst, wo sie sind.",
-      "game": "Prüfen sucht in diesem Ordner nach den Spielen jedes Systems, etwa roms/mame und roms/snes, und prüft sie mit den Listen von MAME und No-Intro. Deine Dateien werden nie verändert."
+      "game": "Prüfen sucht in diesem Ordner nach den Spielen jedes Systems, etwa roms/mame und roms/snes, und prüft sie mit den Listen von MAME und No-Intro. Deine Dateien werden nie verändert.",
+      "home": "Box Office durchsucht diese Ordner nach Fotos und Videos, wenn einer hinzugefügt wird, wenn du auf der Seite Fotos und Videos auf Scannen drückst, und zweimal am Tag. Deine Dateien werden nie verändert."
     },
     "newShows": "Neue Serien",
     "newShowsSub": "Nach welchen Folgen Box Office Ausschau hält, wenn eine Serie hinzugefügt wird, hier oder per Wunsch aus Matinee. Eine lang laufende Serie kann Hunderte alter Folgen haben; wer nur die letzten Staffeln beobachtet, hält Bibliotheksstreife und Upgrades bei dem, was du wahrscheinlich schaust. Beim Hinzufügen einer Serie kannst du trotzdem etwas anderes wählen und Staffeln auf der Seite der Serie an- oder ausschalten. Serien, die schon auf der Liste stehen, behalten, was sie haben.",
@@ -1163,7 +1165,8 @@
       "moving": "Datenbank wird umgezogen…",
       "movingSub": "Box Office öffnet wieder, sobald alles kopiert und geprüft ist.",
       "moveTitle": "Datenbank umziehen?"
-    }
+    },
+    "homeLayout": "Wähle den Ordner mit deinen Fotos und Videos, etwa eine Freigabe, in die dein Handy sichert. Unterordner sind kein Problem: Box Office liest das Aufnahmedatum aus der Datei selbst."
   },
   "mediaTypes": {
     "music": {
@@ -1185,6 +1188,10 @@
     "game": {
       "name": "Spiele",
       "summary": "Sieh dir deine Videospielsammlung an: Arcade-Sets aus MAME und Konsolenspiele, geprüft und mit Cover."
+    },
+    "home": {
+      "name": "Eigene Videos und Fotos",
+      "summary": "Bewahre deine eigenen Fotos und Videos an einem Ort auf: eine Zeitleiste, automatisch erstellte Alben und gefundene Kopien."
     }
   },
   "conn": {
@@ -2484,6 +2491,115 @@
       "missing": "Noch nicht gefunden; erneute Suche {{when}}",
       "waiting": "Gefunden; Download {{when}}",
       "pending": "Noch nicht nachgeschlagen"
+    }
+  },
+  "home": {
+    "sub": "{{photos}} und {{videos}}, {{size}}",
+    "photos_one": "{{count}} Foto",
+    "photos_other": "{{count}} Fotos",
+    "videos_one": "{{count}} Video",
+    "videos_other": "{{count}} Videos",
+    "items_one": "{{count}} Foto oder Video",
+    "items_other": "{{count}} Fotos und Videos",
+    "scanAgain": "Scannen",
+    "none": "Noch keine Fotos oder Videos",
+    "noneBody": "Box Office bewahrt deine eigenen Fotos und Videos an einem Ort auf. Es liest, wann und wo jedes aufgenommen wurde, fasst gemeinsam aufgenommene zu Alben zusammen und findet Kopien desselben Fotos. Deine Dateien werden nicht verändert.",
+    "addRoot": "Füge den Ordner mit deinen Fotos und Videos unter <link>Einstellungen → Stammordner für eigene Videos und Fotos</link> hinzu.",
+    "nothingFound": "Keine Fotos oder Videos gefunden",
+    "nothingFoundBody": "Box Office hat in deinen Stammordnern keine Fotos oder Videos gefunden. Prüfe, ob der Ordner welche enthält, und drücke dann auf Scannen.",
+    "noneOfKind": "Davon noch keine.",
+    "tab": {
+      "timeline": "Zeitleiste",
+      "albums": "Alben",
+      "copies": "Kopien"
+    },
+    "scan": {
+      "finding": "Fotos und Videos werden gesucht…",
+      "reading": "Fotos und Videos werden gelesen und Vorschaubilder erstellt…",
+      "places": "Aufnahmeorte werden benannt…",
+      "albums": "Gemeinsam aufgenommene Fotos werden zu Alben zusammengefasst…",
+      "count": "{{done}} von {{total}}",
+      "skipped": "Box Office konnte nicht überall in {{folders}} nachsehen und hat daher alles behalten, was es von dort schon kannte.",
+      "failed_one": "{{count}} Datei konnte nicht gelesen werden.",
+      "failed_other": "{{count}} Dateien konnten nicht gelesen werden."
+    },
+    "kind": {
+      "label": "Anzeigen",
+      "all": "Alle",
+      "photos": "Fotos",
+      "videos": "Videos",
+      "photo": "Foto",
+      "video": "Video"
+    },
+    "pick": "Auswählen",
+    "pickDay": "Ganzen Tag auswählen",
+    "picked_one": "{{count}} ausgewählt",
+    "picked_other": "{{count}} ausgewählt",
+    "addToAlbum": "Zum Album hinzufügen",
+    "addTitle_one": "{{count}} zu einem Album hinzufügen",
+    "addTitle_other": "{{count}} zu einem Album hinzufügen",
+    "view": {
+      "info": "Infos",
+      "previous": "Zurück",
+      "next": "Weiter",
+      "camera": "Kamera",
+      "size": "Größe",
+      "file": "Datei",
+      "folder": "Ordner",
+      "inAlbums": "In Alben",
+      "download": "Original herunterladen",
+      "guessedDate": "Die Datei sagt nicht, wann sie aufgenommen wurde. Das hier ist der Zeitpunkt der letzten Änderung der Datei.",
+      "cantShow": "Dein Browser kann diese Art Foto nicht anzeigen.",
+      "cantPlay": "Dein Browser kann dieses Video nicht abspielen. Lade es herunter oder spiele es in Matinee ab."
+    },
+    "album": {
+      "untitled": "Album",
+      "label": "Album",
+      "new": "Neues Album",
+      "name": "Name",
+      "nameHint": "Zum Beispiel Garten 2024 oder Omas 80.",
+      "newHint": "Zum Beispiel Garten 2024 oder Omas 80. Füge in der Zeitleiste Fotos hinzu: Drücke auf Auswählen, wähle sie aus und dann Zum Album hinzufügen.",
+      "make": "Album erstellen",
+      "yours": "Deine Alben",
+      "noneYours": "Noch keine. Erstelle eins oder wähle in der Zeitleiste Fotos aus und füge sie einem hinzu.",
+      "events": "Von Box Office erstellt",
+      "eventsSub": "Gemeinsam aufgenommene Fotos und Videos, etwa von einem Ausflug oder einer Reise, erkannt an Zeit und Ort der Aufnahme.",
+      "noneEvents": "Noch keine. Box Office erstellt eins aus 8 oder mehr Fotos vom selben Ausflug oder derselben Reise.",
+      "rename": "Umbenennen",
+      "renameEventHint": "Leer lassen, um wieder {{name}} anzuzeigen.",
+      "delete": "Album löschen",
+      "deleteTitle": "Dieses Album löschen?",
+      "deleteBody": "{{name}} wird gelöscht. Seine Fotos und Videos bleiben, wo sie sind: in der Zeitleiste und auf der Festplatte.",
+      "hide": "Wegräumen",
+      "hideTitle": "Dieses Album wegräumen?",
+      "hideBody": "Es verschwindet aus der Albenliste und Box Office erstellt es nicht neu. Seine Fotos und Videos bleiben, wo sie sind.",
+      "unhide": "Zurückholen",
+      "hiddenNote": "Dieses Album ist weggeräumt. Hol es zurück, damit es wieder bei den anderen steht.",
+      "eventNote": "Box Office hat dieses Album aus gemeinsam aufgenommenen Fotos erstellt. Benenne es um, um einen eigenen Namen zu behalten.",
+      "takeOut": "Aus dem Album nehmen",
+      "emptyTitle": "Dieses Album ist leer",
+      "emptyBody": "Geh zur <link>Zeitleiste</link>, drücke auf Auswählen, wähle Fotos und Videos aus und dann Zum Album hinzufügen."
+    },
+    "copies": {
+      "intro": "Dasselbe Foto oder Video, mehrfach gespeichert. Box Office behält jeweils die größte Kopie und hakt die anderen an. Verschobene Kopien kommen in den .recycle-Ordner des Stammordners, sodass du sie zurückholen kannst, bis er geleert wird.",
+      "none": "Keine Kopien gefunden",
+      "noneBody": "Jedes Foto und Video ist nur einmal vorhanden.",
+      "same": "Gleiche Datei",
+      "alike": "Sieht gleich aus",
+      "groups_one": "{{count}} Foto oder Video mehrfach vorhanden",
+      "groups_other": "{{count}} Fotos und Videos mehrfach vorhanden",
+      "ticked_one": "{{count}} Kopie angehakt, {{size}}",
+      "ticked_other": "{{count}} Kopien angehakt, {{size}}",
+      "keep": "Behalten",
+      "moveThis": "In den Papierkorbordner verschieben",
+      "look": "{{name}} ansehen",
+      "move": "In den Papierkorbordner verschieben",
+      "confirmTitle": "Diese Kopien verschieben?",
+      "confirmBody_one": "{{count}} Kopie, {{size}}, kommt in den .recycle-Ordner ihres Stammordners.",
+      "confirmBody_other": "{{count}} Kopien, {{size}}, kommen in den .recycle-Ordner ihres Stammordners.",
+      "confirmNote": "Eine Kopie jedes Fotos und Videos bleibt, wo sie ist. Leere die Papierkorbordner in den Einstellungen, um den Platz freizugeben.",
+      "moved_one": "{{count}} Kopie in den Papierkorbordner verschoben, {{size}}.",
+      "moved_other": "{{count}} Kopien in den Papierkorbordner verschoben, {{size}}."
     }
   }
 }

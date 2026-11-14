@@ -29,7 +29,8 @@
     "iconsOnly": "Csak ikonok",
     "version": "Box Office {{version}}",
     "games": "Játékok",
-    "importFiles": "Fájlok importálása"
+    "importFiles": "Fájlok importálása",
+    "photos": "Fotók és videók"
   },
   "app": {
     "notAnswering": "A Box Office nem válaszol: {{error}}",
@@ -1043,7 +1044,8 @@
       "series": "A keresés olyan sorozatokat keres egy mappában, amelyek még nincsenek a listán, hogy ott helyben hozzáadhasd őket.",
       "music": "A keresés olyan előadókat keres egy mappában, akik még nincsenek a listán, hogy ott helyben hozzáadhasd őket.",
       "books": "A keresés olyan szerzőket keres egy mappában, akik még nincsenek a listán, hogy ott helyben hozzáadhasd őket.",
-      "game": "Az Ellenőrzés átnézi ezt a mappát minden rendszer játékaiért, például roms/mame és roms/snes, és összeveti őket a MAME és a No-Intro listáival. A fájljaidat soha nem módosítja."
+      "game": "Az Ellenőrzés átnézi ezt a mappát minden rendszer játékaiért, például roms/mame és roms/snes, és összeveti őket a MAME és a No-Intro listáival. A fájljaidat soha nem módosítja.",
+      "home": "A Box Office fotókat és videókat keres ezekben a mappákban, amikor hozzáadnak egyet, amikor a Fotók és videók oldalon az Átnézés gombot nyomod, és naponta kétszer. A fájljaidat soha nem módosítja."
     },
     "newShows": "Új sorozatok",
     "newShowsSub": "Mely epizódokat figyeli a Box Office, amikor egy sorozat bekerül, itt vagy egy Matinee-kérés révén. Egy régóta futó sorozatnak több száz régi epizódja lehet; ha csak az utolsó néhány évadot figyeli, a könyvtárőrjárat és a minőségjavítás arra összpontosít, amit valószínűleg megnézel. Sorozat hozzáadásakor továbbra is választhatsz mást, és az évadokat a sorozat oldalán be- vagy kikapcsolhatod. A listán már szereplő sorozatok megtartják, amijük van.",
@@ -1163,7 +1165,8 @@
       "moving": "Az adatbázis költöztetése…",
       "movingSub": "A Box Office újra megnyílik, ha minden át van másolva és ellenőrizve.",
       "moveTitle": "Költözteted az adatbázist?"
-    }
+    },
+    "homeLayout": "Válaszd ki a fotóidat és videóidat tartalmazó mappát, például egy megosztást, ahová a telefonod ment. Az almappák nem gond: a Box Office magából a fájlból olvassa ki a készítés idejét."
   },
   "mediaTypes": {
     "music": {
@@ -1185,6 +1188,10 @@
     "game": {
       "name": "Játékok",
       "summary": "Nézd meg a videojáték-gyűjteményedet: MAME-es játéktermi készleteket és konzolos játékokat, ellenőrizve és borítóval."
+    },
+    "home": {
+      "name": "Saját videók és fotók",
+      "summary": "Tartsd egy helyen a saját fotóidat és videóidat: idővonal, neked készült albumok és a megtalált másolatok."
     }
   },
   "conn": {
@@ -2484,6 +2491,115 @@
       "missing": "Még nem található; újra keresi {{when}}",
       "waiting": "Megtalálva; letöltés {{when}}",
       "pending": "Még nem keresett"
+    }
+  },
+  "home": {
+    "sub": "{{photos}} és {{videos}}, {{size}}",
+    "photos_one": "{{count}} fotó",
+    "photos_other": "{{count}} fotó",
+    "videos_one": "{{count}} videó",
+    "videos_other": "{{count}} videó",
+    "items_one": "{{count}} fotó vagy videó",
+    "items_other": "{{count}} fotó és videó",
+    "scanAgain": "Átnézés",
+    "none": "Még nincsenek fotók vagy videók",
+    "noneBody": "A Box Office egy helyen tartja a saját fotóidat és videóidat. Kiolvassa, mikor és hol készült mindegyik, albumokba gyűjti az együtt készülteket, és megtalálja ugyanannak a fotónak a másolatait. A fájljaidat nem módosítja.",
+    "addRoot": "Add hozzá a fotóidat és videóidat tartalmazó mappát itt: <link>Beállítások → Saját videók és fotók gyökérmappái</link>.",
+    "nothingFound": "Nem található fotó vagy videó",
+    "nothingFoundBody": "A Box Office nem talált fotót vagy videót a gyökérmappáidban. Ellenőrizd, hogy a mappában vannak-e, majd nyomd meg az Átnézés gombot.",
+    "noneOfKind": "Ilyen még nincs.",
+    "tab": {
+      "timeline": "Idővonal",
+      "albums": "Albumok",
+      "copies": "Másolatok"
+    },
+    "scan": {
+      "finding": "Fotók és videók keresése…",
+      "reading": "Fotók és videók olvasása és bélyegképek készítése…",
+      "places": "A készítési helyek elnevezése…",
+      "albums": "Az együtt készült fotók albumokba gyűjtése…",
+      "count": "{{done}} / {{total}}",
+      "skipped": "A Box Office nem tudott mindenhova benézni itt: {{folders}}, ezért megtartott mindent, amit onnan már ismert.",
+      "failed_one": "{{count}} fájlt nem sikerült beolvasni.",
+      "failed_other": "{{count}} fájlt nem sikerült beolvasni."
+    },
+    "kind": {
+      "label": "Megjelenítés",
+      "all": "Mind",
+      "photos": "Fotók",
+      "videos": "Videók",
+      "photo": "Fotó",
+      "video": "Videó"
+    },
+    "pick": "Kijelölés",
+    "pickDay": "Az egész nap kijelölése",
+    "picked_one": "{{count}} kijelölve",
+    "picked_other": "{{count}} kijelölve",
+    "addToAlbum": "Hozzáadás albumhoz",
+    "addTitle_one": "{{count}} elem hozzáadása albumhoz",
+    "addTitle_other": "{{count}} elem hozzáadása albumhoz",
+    "view": {
+      "info": "Adatok",
+      "previous": "Előző",
+      "next": "Következő",
+      "camera": "Fényképezőgép",
+      "size": "Méret",
+      "file": "Fájl",
+      "folder": "Mappa",
+      "inAlbums": "Albumokban",
+      "download": "Az eredeti letöltése",
+      "guessedDate": "A fájl nem árulja el, mikor készült, ezért ez a fájl utolsó módosításának ideje.",
+      "cantShow": "A böngésződ nem tudja megjeleníteni ezt a fajta fotót.",
+      "cantPlay": "A böngésződ nem tudja lejátszani ezt a videót. Töltsd le, vagy játszd le a Matinee-ban."
+    },
+    "album": {
+      "untitled": "Album",
+      "label": "Album",
+      "new": "Új album",
+      "name": "Név",
+      "nameHint": "Például Kert 2024 vagy Nagyi 80. születésnapja.",
+      "newHint": "Például Kert 2024 vagy Nagyi 80. születésnapja. Az idővonalról adhatsz hozzá fotókat: nyomd meg a Kijelölés gombot, válaszd ki őket, majd Hozzáadás albumhoz.",
+      "make": "Album létrehozása",
+      "yours": "Saját albumaid",
+      "noneYours": "Még nincs egy sem. Hozz létre egyet, vagy jelölj ki fotókat az idővonalon, és add hozzá őket egy albumhoz.",
+      "events": "A Box Office készítette",
+      "eventsSub": "Együtt készült fotók és videók, például egy kirándulásról vagy utazásról, a készítés ideje és helye alapján.",
+      "noneEvents": "Még nincs egy sem. A Box Office legalább 8, ugyanazon a kiránduláson vagy utazáson készült fotóból készít albumot.",
+      "rename": "Átnevezés",
+      "renameEventHint": "Hagyd üresen, hogy újra {{name}} látszódjon.",
+      "delete": "Album törlése",
+      "deleteTitle": "Törlöd ezt az albumot?",
+      "deleteBody": "A(z) {{name}} album törlődik. A fotói és videói maradnak, ahol vannak: az idővonalon és a lemezen.",
+      "hide": "Félretétel",
+      "hideTitle": "Félreteszed ezt az albumot?",
+      "hideBody": "Eltűnik az albumok listájáról, és a Box Office nem készíti el újra. A fotói és videói maradnak, ahol vannak.",
+      "unhide": "Visszahozás",
+      "hiddenNote": "Ez az album félre van téve. Hozd vissza, hogy újra a többi között legyen.",
+      "eventNote": "A Box Office együtt készült fotókból készítette ezt az albumot. Nevezd át, hogy saját nevet kapjon.",
+      "takeOut": "Eltávolítás az albumból",
+      "emptyTitle": "Ez az album üres",
+      "emptyBody": "Menj az <link>idővonalra</link>, nyomd meg a Kijelölés gombot, válassz fotókat és videókat, majd Hozzáadás albumhoz."
+    },
+    "copies": {
+      "intro": "Ugyanaz a fotó vagy videó többször is megvan. A Box Office mindegyikből a legnagyobb másolatot tartja meg, a többit bejelöli. Az áthelyezett másolatok a gyökérmappa .recycle mappájába kerülnek, így visszaszerezheted őket, amíg ki nem ürül.",
+      "none": "Nincsenek másolatok",
+      "noneBody": "Minden fotó és videó csak egyszer van meg.",
+      "same": "Ugyanaz a fájl",
+      "alike": "Ugyanúgy néz ki",
+      "groups_one": "{{count}} fotó vagy videó többször is megvan",
+      "groups_other": "{{count}} fotó és videó többször is megvan",
+      "ticked_one": "{{count}} másolat bejelölve, {{size}}",
+      "ticked_other": "{{count}} másolat bejelölve, {{size}}",
+      "keep": "Megtartva",
+      "moveThis": "Áthelyezés a lomtárba",
+      "look": "{{name}} megtekintése",
+      "move": "Áthelyezés a lomtárba",
+      "confirmTitle": "Áthelyezed ezeket a másolatokat?",
+      "confirmBody_one": "{{count}} másolat, {{size}}, a gyökérmappája .recycle mappájába kerül.",
+      "confirmBody_other": "{{count}} másolat, {{size}}, a gyökérmappája .recycle mappájába kerül.",
+      "confirmNote": "Minden fotóból és videóból egy másolat a helyén marad. A hely felszabadításához ürítsd ki a lomtárakat a Beállításokban.",
+      "moved_one": "{{count}} másolat a lomtárba került, {{size}}.",
+      "moved_other": "{{count}} másolat a lomtárba került, {{size}}."
     }
   }
 }

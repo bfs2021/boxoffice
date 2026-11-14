@@ -263,7 +263,7 @@ export type Job = { id: number; kind: string; subject: string; status: string; m
 export type ShowDefaults = { monitor: string; recent: number }
 
 // A kind of media beyond movies and TV that an admin can turn on.
-export type MediaTypeKey = 'music' | 'audiobook' | 'ebook' | 'comic' | 'game'
+export type MediaTypeKey = 'music' | 'audiobook' | 'ebook' | 'comic' | 'game' | 'home'
 export type MediaType = { key: MediaTypeKey; name: string; summary: string; replaces?: string; enabled: boolean; suggested: string[] }
 export type RootKind = 'movie' | 'series' | MediaTypeKey
 export type Settings = { apiKey: string; apiKeyFromEnv: boolean; hasTmdbKey: boolean; tmdbKeyFromEnv: boolean; tmdbKeyBuiltIn: boolean; mediaTypes: MediaType[] }
@@ -927,3 +927,60 @@ export type GameWant = {
   misses?: number
   download?: Download
 }
+
+// ---- Home videos and photos ----
+
+// taken is the camera's clock time as Unix seconds read as UTC.
+export type HomeItem = {
+  id: number
+  rootFolder: string
+  path: string
+  kind: 'photo' | 'video'
+  size: number
+  taken: number
+  takenFrom?: 'camera' | 'video' | 'name' | 'file'
+  width?: number
+  height?: number
+  duration?: number
+  make?: string
+  model?: string
+  lat?: number
+  lon?: number
+  hasGps?: boolean
+  place?: string
+  name: string
+  folder: string
+  hasThumb: boolean
+  viewable: boolean
+}
+export type HomeItemDetail = HomeItem & { albums: HomeAlbum[] }
+export type HomePage = { items: HomeItem[]; next?: string }
+export type HomeAlbum = {
+  id: number
+  kind: 'event' | 'own'
+  name: string
+  place?: string
+  start: number
+  end: number
+  coverId: number
+  hidden?: boolean
+  createdAt: string
+  count: number
+}
+export type HomeScan = {
+  running: boolean
+  step?: 'finding' | 'reading' | 'places' | 'albums'
+  done: number
+  total: number
+  found: number
+  new: number
+  gone: number
+  failed: number
+  skipped: string[]
+  note?: string
+  error?: string
+  started?: string
+  finished?: string
+}
+export type HomeSummary = { photos: number; videos: number; size: number; roots: number; albums: number; scan: HomeScan }
+export type HomeCopies = { kind: 'same' | 'alike'; items: HomeItem[]; keep: number; spare: number }
