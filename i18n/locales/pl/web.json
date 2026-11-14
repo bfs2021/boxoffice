@@ -33,7 +33,8 @@
     "iconsOnly": "Tylko ikony",
     "version": "Box Office {{version}}",
     "games": "Gry",
-    "importFiles": "Importuj pliki"
+    "importFiles": "Importuj pliki",
+    "photos": "Zdjęcia i filmy"
   },
   "app": {
     "notAnswering": "Box Office nie odpowiada: {{error}}",
@@ -1191,7 +1192,8 @@
       "series": "Skanowanie szuka seriali, które są już w folderze, ale nie na liście, aby można je było dodać tam, gdzie są.",
       "music": "Skanowanie szuka wykonawców, którzy są już w folderze, ale nie na liście, aby można ich było dodać tam, gdzie są.",
       "books": "Skanowanie szuka autorów, którzy są już w folderze, ale nie na liście, aby można ich było dodać tam, gdzie są.",
-      "game": "Sprawdź przeszukuje ten folder w poszukiwaniu gier każdego systemu, np. roms/mame i roms/snes, i porównuje je z listami MAME i No-Intro. Nigdy nie zmienia twoich plików."
+      "game": "Sprawdź przeszukuje ten folder w poszukiwaniu gier każdego systemu, np. roms/mame i roms/snes, i porównuje je z listami MAME i No-Intro. Nigdy nie zmienia twoich plików.",
+      "home": "Box Office szuka zdjęć i filmów w tych folderach, gdy któryś zostanie dodany, gdy naciśniesz Przeszukaj na stronie Zdjęcia i filmy, oraz dwa razy dziennie. Nigdy nie zmienia twoich plików."
     },
     "newShows": "Nowe seriale",
     "newShowsSub": "Których odcinków Box Office wypatruje, gdy serial zostaje dodany, tutaj lub prośbą z Matinee. Długi serial może mieć setki starych odcinków; wypatrywanie tylko kilku ostatnich sezonów skupia patrol biblioteki i ulepszenia na tym, co pewnie obejrzysz. Przy dodawaniu serialu możesz wybrać coś innego, a sezony włączać i wyłączać na stronie serialu. Seriale już na liście zachowują to, co mają.",
@@ -1317,7 +1319,8 @@
       "moving": "Przenoszenie bazy danych…",
       "movingSub": "Box Office otworzy się, gdy wszystko zostanie skopiowane i sprawdzone.",
       "moveTitle": "Przenieść bazę danych?"
-    }
+    },
+    "homeLayout": "Wybierz folder ze zdjęciami i filmami, na przykład udział, do którego telefon robi kopię zapasową. Podfoldery nie przeszkadzają: Box Office odczytuje datę zrobienia z samego pliku."
   },
   "mediaTypes": {
     "music": {
@@ -1339,6 +1342,10 @@
     "game": {
       "name": "Gry",
       "summary": "Przeglądaj swoją kolekcję gier wideo: zestawy automatów z MAME i gry na konsole, sprawdzone i z okładkami."
+    },
+    "home": {
+      "name": "Domowe filmy i zdjęcia",
+      "summary": "Trzymaj własne zdjęcia i filmy w jednym miejscu: oś czasu, albumy tworzone dla ciebie i znalezione kopie."
     }
   },
   "conn": {
@@ -2710,6 +2717,135 @@
       "missing": "Jeszcze nie znaleziono; ponowne szukanie {{when}}",
       "waiting": "Znaleziono; pobieranie {{when}}",
       "pending": "Jeszcze nie sprawdzono"
+    }
+  },
+  "home": {
+    "sub": "{{photos}} i {{videos}}, {{size}}",
+    "photos_few": "{{count}} zdjęcia",
+    "photos_many": "{{count}} zdjęć",
+    "photos_one": "{{count}} zdjęcie",
+    "photos_other": "{{count}} zdjęcia",
+    "videos_few": "{{count}} filmy",
+    "videos_many": "{{count}} filmów",
+    "videos_one": "{{count}} film",
+    "videos_other": "{{count}} filmu",
+    "items_few": "{{count}} zdjęcia i filmy",
+    "items_many": "{{count}} zdjęć i filmów",
+    "items_one": "{{count}} zdjęcie lub film",
+    "items_other": "{{count}} zdjęcia i filmu",
+    "scanAgain": "Przeszukaj",
+    "none": "Nie ma jeszcze zdjęć ani filmów",
+    "noneBody": "Box Office trzyma twoje własne zdjęcia i filmy w jednym miejscu. Odczytuje, kiedy i gdzie każde zostało zrobione, łączy w albumy te zrobione razem i znajduje kopie tego samego zdjęcia. Nie zmienia twoich plików.",
+    "addRoot": "Dodaj folder ze zdjęciami i filmami w <link>Ustawienia → Foldery główne domowych filmów i zdjęć</link>.",
+    "nothingFound": "Nie znaleziono zdjęć ani filmów",
+    "nothingFoundBody": "Box Office nie znalazł zdjęć ani filmów w twoich folderach głównych. Sprawdź, czy folder je zawiera, a potem naciśnij Przeszukaj.",
+    "noneOfKind": "Jeszcze nic takiego.",
+    "tab": {
+      "timeline": "Oś czasu",
+      "albums": "Albumy",
+      "copies": "Kopie"
+    },
+    "scan": {
+      "finding": "Szukanie zdjęć i filmów…",
+      "reading": "Odczytywanie zdjęć i filmów i tworzenie miniatur…",
+      "places": "Nazywanie miejsc, w których je zrobiono…",
+      "albums": "Łączenie w albumy zdjęć zrobionych razem…",
+      "count": "{{done}} z {{total}}",
+      "skipped": "Box Office nie mógł przejrzeć całego {{folders}}, więc zachował wszystko, co już stamtąd znał.",
+      "failed_few": "Nie udało się odczytać {{count}} plików.",
+      "failed_many": "Nie udało się odczytać {{count}} plików.",
+      "failed_one": "Nie udało się odczytać {{count}} pliku.",
+      "failed_other": "Nie udało się odczytać {{count}} pliku."
+    },
+    "kind": {
+      "label": "Pokaż",
+      "all": "Wszystko",
+      "photos": "Zdjęcia",
+      "videos": "Filmy",
+      "photo": "Zdjęcie",
+      "video": "Film"
+    },
+    "pick": "Zaznacz",
+    "pickDay": "Zaznacz cały dzień",
+    "picked_few": "Zaznaczono {{count}}",
+    "picked_many": "Zaznaczono {{count}}",
+    "picked_one": "Zaznaczono {{count}}",
+    "picked_other": "Zaznaczono {{count}}",
+    "addToAlbum": "Dodaj do albumu",
+    "addTitle_few": "Dodaj {{count}} do albumu",
+    "addTitle_many": "Dodaj {{count}} do albumu",
+    "addTitle_one": "Dodaj {{count}} do albumu",
+    "addTitle_other": "Dodaj {{count}} do albumu",
+    "view": {
+      "info": "Informacje",
+      "previous": "Poprzednie",
+      "next": "Następne",
+      "camera": "Aparat",
+      "size": "Wymiary",
+      "file": "Plik",
+      "folder": "Folder",
+      "inAlbums": "W albumach",
+      "download": "Pobierz oryginał",
+      "guessedDate": "Plik nie mówi, kiedy zostało zrobione, więc to jest data ostatniej zmiany pliku.",
+      "cantShow": "Twoja przeglądarka nie może wyświetlić tego rodzaju zdjęcia.",
+      "cantPlay": "Twoja przeglądarka nie może odtworzyć tego filmu. Pobierz go, aby obejrzeć, albo odtwórz w Matinee."
+    },
+    "album": {
+      "untitled": "Album",
+      "label": "Album",
+      "new": "Nowy album",
+      "name": "Nazwa",
+      "nameHint": "Na przykład Ogród 2024 albo 80. urodziny babci.",
+      "newHint": "Na przykład Ogród 2024 albo 80. urodziny babci. Dodaj zdjęcia z osi czasu: naciśnij Zaznacz, wybierz je, a potem Dodaj do albumu.",
+      "make": "Utwórz album",
+      "yours": "Twoje albumy",
+      "noneYours": "Jeszcze żadnego. Utwórz album albo zaznacz zdjęcia na osi czasu i dodaj je do albumu.",
+      "events": "Utworzone przez Box Office",
+      "eventsSub": "Zdjęcia i filmy zrobione razem, na przykład na wycieczce albo w podróży, rozpoznane po czasie i miejscu zrobienia.",
+      "noneEvents": "Jeszcze żadnego. Box Office tworzy album z co najmniej 8 zdjęć z tej samej wycieczki albo podróży.",
+      "rename": "Zmień nazwę",
+      "renameEventHint": "Zostaw puste, aby znów pokazać {{name}}.",
+      "delete": "Usuń album",
+      "deleteTitle": "Usunąć ten album?",
+      "deleteBody": "{{name}} zostanie usunięty. Jego zdjęcia i filmy zostają tam, gdzie są: na osi czasu i na dysku.",
+      "hide": "Odłóż",
+      "hideTitle": "Odłożyć ten album?",
+      "hideBody": "Zniknie z listy albumów, a Box Office nie utworzy go ponownie. Jego zdjęcia i filmy zostają tam, gdzie są.",
+      "unhide": "Przywróć",
+      "hiddenNote": "Ten album jest odłożony. Przywróć go, aby znów był widoczny z innymi.",
+      "eventNote": "Box Office utworzył ten album ze zdjęć zrobionych razem. Zmień jego nazwę, aby zachować własną.",
+      "takeOut": "Usuń z albumu",
+      "emptyTitle": "Ten album jest pusty",
+      "emptyBody": "Przejdź do <link>osi czasu</link>, naciśnij Zaznacz, wybierz zdjęcia i filmy, a potem Dodaj do albumu."
+    },
+    "copies": {
+      "intro": "To samo zdjęcie lub film zapisane więcej niż raz. Box Office zostawia największą kopię każdego i zaznacza pozostałe. Przeniesione kopie trafiają do folderu .recycle w folderze głównym, więc możesz je odzyskać, dopóki nie zostanie opróżniony.",
+      "none": "Nie znaleziono kopii",
+      "noneBody": "Każde zdjęcie i film jest zapisane tylko raz.",
+      "same": "Ten sam plik",
+      "alike": "Wygląda tak samo",
+      "groups_few": "{{count}} zdjęcia lub filmy zapisane więcej niż raz",
+      "groups_many": "{{count}} zdjęć lub filmów zapisanych więcej niż raz",
+      "groups_one": "{{count}} zdjęcie lub film zapisane więcej niż raz",
+      "groups_other": "{{count}} zdjęcia lub filmu zapisanego więcej niż raz",
+      "ticked_few": "Zaznaczono {{count}} kopie, {{size}}",
+      "ticked_many": "Zaznaczono {{count}} kopii, {{size}}",
+      "ticked_one": "Zaznaczono {{count}} kopię, {{size}}",
+      "ticked_other": "Zaznaczono {{count}} kopii, {{size}}",
+      "keep": "Zostaje",
+      "moveThis": "Przenieś do kosza",
+      "look": "Obejrzyj {{name}}",
+      "move": "Przenieś do kosza",
+      "confirmTitle": "Przenieść te kopie?",
+      "confirmBody_few": "{{count}} kopie, {{size}}, trafią do folderu .recycle w swoim folderze głównym.",
+      "confirmBody_many": "{{count}} kopii, {{size}}, trafi do folderu .recycle w swoim folderze głównym.",
+      "confirmBody_one": "{{count}} kopia, {{size}}, trafi do folderu .recycle w swoim folderze głównym.",
+      "confirmBody_other": "{{count}} kopii, {{size}}, trafi do folderu .recycle w swoim folderze głównym.",
+      "confirmNote": "Jedna kopia każdego zdjęcia i filmu zostaje na miejscu. Opróżnij kosze w Ustawieniach, aby zwolnić miejsce.",
+      "moved_few": "Przeniesiono {{count}} kopie do kosza, {{size}}.",
+      "moved_many": "Przeniesiono {{count}} kopii do kosza, {{size}}.",
+      "moved_one": "Przeniesiono {{count}} kopię do kosza, {{size}}.",
+      "moved_other": "Przeniesiono {{count}} kopii do kosza, {{size}}."
     }
   }
 }

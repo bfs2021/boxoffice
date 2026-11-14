@@ -271,6 +271,13 @@ func (s *Server) addRootFolder(w http.ResponseWriter, r *http.Request) error {
 			s.Log.Info("not checking a new games folder now", "path", f.Path, "err", err)
 		}
 	}
+	// Home videos and photos are looked through as soon as their folder
+	// is added, too.
+	if in.Kind == mediatypes.Home && s.Home != nil {
+		if err := s.Home.ScanSoon(r.Context()); err != nil {
+			s.Log.Info("not looking through a new home media folder now", "path", f.Path, "err", err)
+		}
+	}
 	return writeJSON(w, http.StatusCreated, f)
 }
 

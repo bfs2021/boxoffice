@@ -31,7 +31,8 @@
     "iconsOnly": "Icônes seulement",
     "version": "Box Office {{version}}",
     "games": "Jeux",
-    "importFiles": "Importer des fichiers"
+    "importFiles": "Importer des fichiers",
+    "photos": "Photos et vidéos"
   },
   "app": {
     "notAnswering": "Box Office ne répond pas : {{error}}",
@@ -1117,7 +1118,8 @@
       "series": "L’analyse cherche les séries déjà présentes dans un dossier mais pas sur la liste, pour que vous puissiez les ajouter là où elles sont.",
       "music": "L’analyse cherche les artistes déjà présents dans un dossier mais pas sur la liste, pour que vous puissiez les ajouter là où ils sont.",
       "books": "L’analyse cherche les auteurs déjà présents dans un dossier mais pas sur la liste, pour que vous puissiez les ajouter là où ils sont.",
-      "game": "Vérifier cherche dans ce dossier les jeux de chaque système, comme roms/mame et roms/snes, et les compare aux listes de MAME et de No-Intro. Vos fichiers ne sont jamais modifiés."
+      "game": "Vérifier cherche dans ce dossier les jeux de chaque système, comme roms/mame et roms/snes, et les compare aux listes de MAME et de No-Intro. Vos fichiers ne sont jamais modifiés.",
+      "home": "Box Office parcourt ces dossiers à la recherche de photos et de vidéos quand un dossier est ajouté, quand vous appuyez sur Analyser sur la page Photos et vidéos, et deux fois par jour. Il ne modifie jamais vos fichiers."
     },
     "newShows": "Nouvelles séries",
     "newShowsSub": "Les épisodes que Box Office surveille quand une série est ajoutée, ici ou par une demande depuis Matinee. Une série au long cours peut avoir des centaines d’anciens épisodes ; ne surveiller que les dernières saisons concentre la patrouille de la bibliothèque et les améliorations sur ce que vous regarderez sans doute. Vous pouvez toujours choisir autre chose en ajoutant une série, et activer ou désactiver des saisons depuis la page de la série. Les séries déjà sur la liste gardent ce qu’elles ont.",
@@ -1240,7 +1242,8 @@
       "moving": "Déplacement de la base de données…",
       "movingSub": "Box Office rouvre dès que tout est copié et vérifié.",
       "moveTitle": "Déplacer la base de données ?"
-    }
+    },
+    "homeLayout": "Choisissez le dossier où se trouvent vos photos et vidéos, par exemple un partage où votre téléphone fait ses sauvegardes. Les sous-dossiers ne posent aucun problème : Box Office lit la date de prise de vue dans le fichier lui-même."
   },
   "mediaTypes": {
     "music": {
@@ -1262,6 +1265,10 @@
     "game": {
       "name": "Jeux",
       "summary": "Voyez votre collection de jeux vidéo : sets d'arcade MAME et jeux de console, vérifiés et avec leur jaquette."
+    },
+    "home": {
+      "name": "Vidéos et photos personnelles",
+      "summary": "Rassemblez vos propres photos et vidéos au même endroit : une frise chronologique, des albums créés pour vous et les copies repérées."
     }
   },
   "conn": {
@@ -2597,6 +2604,125 @@
       "missing": "Pas encore trouvés ; nouvelle recherche {{when}}",
       "waiting": "Trouvés ; téléchargement {{when}}",
       "pending": "Pas encore recherchés"
+    }
+  },
+  "home": {
+    "sub": "{{photos}} et {{videos}}, {{size}}",
+    "photos_many": "{{count}} photos",
+    "photos_one": "{{count}} photo",
+    "photos_other": "{{count}} photos",
+    "videos_many": "{{count}} vidéos",
+    "videos_one": "{{count}} vidéo",
+    "videos_other": "{{count}} vidéos",
+    "items_many": "{{count}} photos et vidéos",
+    "items_one": "{{count}} photo ou vidéo",
+    "items_other": "{{count}} photos et vidéos",
+    "scanAgain": "Analyser",
+    "none": "Aucune photo ni vidéo pour l'instant",
+    "noneBody": "Box Office rassemble vos propres photos et vidéos au même endroit. Il lit quand et où chacune a été prise, regroupe en albums celles prises ensemble et repère les copies d'une même photo. Il ne modifie pas vos fichiers.",
+    "addRoot": "Ajoutez le dossier de vos photos et vidéos dans <link>Paramètres → Dossiers racine des vidéos et photos personnelles</link>.",
+    "nothingFound": "Aucune photo ni vidéo trouvée",
+    "nothingFoundBody": "Box Office n'a trouvé aucune photo ni vidéo dans vos dossiers racine. Vérifiez que le dossier en contient, puis appuyez sur Analyser.",
+    "noneOfKind": "Rien de ce type pour l'instant.",
+    "tab": {
+      "timeline": "Chronologie",
+      "albums": "Albums",
+      "copies": "Copies"
+    },
+    "scan": {
+      "finding": "Recherche des photos et vidéos…",
+      "reading": "Lecture des photos et vidéos et création des miniatures…",
+      "places": "Nommage des lieux de prise de vue…",
+      "albums": "Regroupement en albums des photos prises ensemble…",
+      "count": "{{done}} sur {{total}}",
+      "skipped": "Box Office n'a pas pu parcourir entièrement {{folders}} ; il a donc gardé tout ce qu'il en connaissait.",
+      "failed_many": "{{count}} fichiers n'ont pas pu être lus.",
+      "failed_one": "{{count}} fichier n'a pas pu être lu.",
+      "failed_other": "{{count}} fichiers n'ont pas pu être lus."
+    },
+    "kind": {
+      "label": "Afficher",
+      "all": "Tout",
+      "photos": "Photos",
+      "videos": "Vidéos",
+      "photo": "Photo",
+      "video": "Vidéo"
+    },
+    "pick": "Sélectionner",
+    "pickDay": "Sélectionner la journée",
+    "picked_many": "{{count}} sélectionnés",
+    "picked_one": "{{count}} sélectionné",
+    "picked_other": "{{count}} sélectionnés",
+    "addToAlbum": "Ajouter à un album",
+    "addTitle_many": "Ajouter {{count}} éléments à un album",
+    "addTitle_one": "Ajouter {{count}} élément à un album",
+    "addTitle_other": "Ajouter {{count}} éléments à un album",
+    "view": {
+      "info": "Infos",
+      "previous": "Précédent",
+      "next": "Suivant",
+      "camera": "Appareil",
+      "size": "Taille",
+      "file": "Fichier",
+      "folder": "Dossier",
+      "inAlbums": "Dans les albums",
+      "download": "Télécharger l'original",
+      "guessedDate": "Le fichier n'indique pas quand il a été pris : voici la date de sa dernière modification.",
+      "cantShow": "Votre navigateur ne peut pas afficher ce type de photo.",
+      "cantPlay": "Votre navigateur ne peut pas lire cette vidéo. Téléchargez-la pour la regarder, ou lisez-la dans Matinee."
+    },
+    "album": {
+      "untitled": "Album",
+      "label": "Album",
+      "new": "Nouvel album",
+      "name": "Nom",
+      "nameHint": "Par exemple Jardin 2024 ou Les 80 ans de mamie.",
+      "newHint": "Par exemple Jardin 2024 ou Les 80 ans de mamie. Ajoutez-y des photos depuis la chronologie : appuyez sur Sélectionner, choisissez-les, puis Ajouter à un album.",
+      "make": "Créer l'album",
+      "yours": "Vos albums",
+      "noneYours": "Aucun pour l'instant. Créez-en un, ou sélectionnez des photos dans la chronologie et ajoutez-les à un album.",
+      "events": "Créés par Box Office",
+      "eventsSub": "Les photos et vidéos prises ensemble, lors d'une sortie ou d'un voyage, repérées d'après le moment et le lieu de prise de vue.",
+      "noneEvents": "Aucun pour l'instant. Box Office en crée un à partir de 8 photos ou plus prises lors d'une même sortie ou d'un même voyage.",
+      "rename": "Renommer",
+      "renameEventHint": "Laissez vide pour afficher de nouveau {{name}}.",
+      "delete": "Supprimer l'album",
+      "deleteTitle": "Supprimer cet album ?",
+      "deleteBody": "{{name}} sera supprimé. Ses photos et vidéos restent où elles sont, dans la chronologie et sur le disque.",
+      "hide": "Ranger",
+      "hideTitle": "Ranger cet album ?",
+      "hideBody": "Il quitte la liste des albums et Box Office ne le recréera pas. Ses photos et vidéos restent où elles sont.",
+      "unhide": "Ressortir",
+      "hiddenNote": "Cet album est rangé. Ressortez-le pour qu'il revienne dans la liste avec les autres.",
+      "eventNote": "Box Office a créé cet album à partir de photos prises ensemble. Renommez-le pour lui donner un nom à vous.",
+      "takeOut": "Retirer de l'album",
+      "emptyTitle": "Cet album est vide",
+      "emptyBody": "Allez dans la <link>chronologie</link>, appuyez sur Sélectionner, choisissez des photos et vidéos, puis Ajouter à un album."
+    },
+    "copies": {
+      "intro": "La même photo ou vidéo conservée plusieurs fois. Box Office garde la plus grande copie de chacune et coche les autres. Les copies déplacées vont dans le dossier .recycle du dossier racine : vous pouvez les récupérer tant qu'il n'est pas vidé.",
+      "none": "Aucune copie trouvée",
+      "noneBody": "Chaque photo et vidéo n'est conservée qu'une fois.",
+      "same": "Même fichier",
+      "alike": "Identique à l'œil",
+      "groups_many": "{{count}} photos et vidéos conservées plusieurs fois",
+      "groups_one": "{{count}} photo ou vidéo conservée plusieurs fois",
+      "groups_other": "{{count}} photos et vidéos conservées plusieurs fois",
+      "ticked_many": "{{count}} copies cochées, {{size}}",
+      "ticked_one": "{{count}} copie cochée, {{size}}",
+      "ticked_other": "{{count}} copies cochées, {{size}}",
+      "keep": "Gardée",
+      "moveThis": "Déplacer vers la corbeille",
+      "look": "Voir {{name}}",
+      "move": "Déplacer vers la corbeille",
+      "confirmTitle": "Déplacer ces copies ?",
+      "confirmBody_many": "{{count}} copies, {{size}}, vont dans le dossier .recycle de leur dossier racine.",
+      "confirmBody_one": "{{count}} copie, {{size}}, va dans le dossier .recycle de son dossier racine.",
+      "confirmBody_other": "{{count}} copies, {{size}}, vont dans le dossier .recycle de leur dossier racine.",
+      "confirmNote": "Une copie de chaque photo et vidéo reste où elle est. Videz les corbeilles dans les Paramètres pour libérer l'espace.",
+      "moved_many": "{{count}} copies déplacées vers la corbeille, {{size}}.",
+      "moved_one": "{{count}} copie déplacée vers la corbeille, {{size}}.",
+      "moved_other": "{{count}} copies déplacées vers la corbeille, {{size}}."
     }
   }
 }

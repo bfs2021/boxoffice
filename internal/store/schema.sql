@@ -487,6 +487,60 @@ CREATE TABLE IF NOT EXISTS game_wants (
 	UNIQUE (system, name)
 );
 
+-- Home videos and photos, once they're turned on in Settings: every photo
+-- and video found in a home media root folder, with what Box Office read
+-- from it. Box Office only reads these files; the one change it makes is
+-- moving a duplicate into the root folder's .recycle folder when asked.
+CREATE TABLE IF NOT EXISTS home_items (
+	id          INTEGER PRIMARY KEY AUTOINCREMENT,
+	root_folder TEXT NOT NULL,
+	path        TEXT NOT NULL UNIQUE,
+	kind        TEXT NOT NULL,                       -- photo or video
+	size        BIGINT NOT NULL DEFAULT 0,
+	mtime       BIGINT NOT NULL DEFAULT 0,
+	taken_at    BIGINT NOT NULL DEFAULT 0,           -- the clock time it was taken, as Unix seconds read as UTC
+	taken_from  TEXT NOT NULL DEFAULT '',            -- where that came from: camera, video, name or file
+	width       INTEGER NOT NULL DEFAULT 0,
+	height      INTEGER NOT NULL DEFAULT 0,
+	duration    DOUBLE PRECISION NOT NULL DEFAULT 0, -- videos: seconds
+	make        TEXT NOT NULL DEFAULT '',
+	model       TEXT NOT NULL DEFAULT '',
+	lat         DOUBLE PRECISION NOT NULL DEFAULT 0,
+	lon         DOUBLE PRECISION NOT NULL DEFAULT 0,
+	has_gps     INTEGER NOT NULL DEFAULT 0,
+	place       TEXT NOT NULL DEFAULT '',            -- the nearest town, such as "Lisbon, Portugal"
+	orientation INTEGER NOT NULL DEFAULT 0,          -- photos: EXIF orientation, 1-8
+	sum         TEXT NOT NULL DEFAULT '',            -- a fingerprint of the file's bytes, for exact copies
+	look        TEXT NOT NULL DEFAULT '',            -- photos: a difference hash of the picture, for look-alikes
+	thumb       INTEGER NOT NULL DEFAULT 0,          -- 1 once its thumbnail is made, -1 when it couldn't be
+	added_at    BIGINT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS home_items_taken ON home_items (taken_at);
+CREATE INDEX IF NOT EXISTS home_items_sum ON home_items (sum);
+
+-- Albums: ones Box Office makes from photos taken together (event), and
+-- ones people make themselves (own). An event's name is empty until
+-- someone names it; the page shows its place and dates instead.
+CREATE TABLE IF NOT EXISTS home_albums (
+	id         INTEGER PRIMARY KEY AUTOINCREMENT,
+	kind       TEXT NOT NULL,                -- event or own
+	name       TEXT NOT NULL DEFAULT '',
+	place      TEXT NOT NULL DEFAULT '',
+	start_at   BIGINT NOT NULL DEFAULT 0,
+	end_at     BIGINT NOT NULL DEFAULT 0,
+	cover_id   BIGINT NOT NULL DEFAULT 0,
+	hidden     INTEGER NOT NULL DEFAULT 0,   -- events: put away, and not made again
+	created_at BIGINT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS home_album_items (
+	album_id BIGINT NOT NULL REFERENCES home_albums(id) ON DELETE CASCADE,
+	item_id  BIGINT NOT NULL REFERENCES home_items(id) ON DELETE CASCADE,
+	added_at BIGINT NOT NULL,
+	PRIMARY KEY (album_id, item_id)
+);
+CREATE INDEX IF NOT EXISTS home_album_items_item ON home_album_items (item_id);
+
 -- The request site: the people who use it, what they ask for, and the
 -- problems they report. Members are not admins: they sign in to the
 -- request site only, never to the admin UI, and have their own sessions.

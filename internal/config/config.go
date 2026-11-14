@@ -46,6 +46,9 @@ type Config struct {
 	// LibretroDB is another copy of libretro's database to download
 	// No-Intro's lists and game facts from; BOXOFFICE_LIBRETRO_DB_URL.
 	LibretroDB string
+	// HomePlaces is another copy of GeoNames' town list that home photos'
+	// places are named from (a URL or a file), or "off".
+	HomePlaces string
 	// TitleDB is another copy of titledb, the Switch's list of games;
 	// BOXOFFICE_TITLEDB_URL.
 	TitleDB string
@@ -86,6 +89,7 @@ func load(args []string, env func(string) string) (Config, error) {
 		MAMEReleases: strings.TrimRight(env("BOXOFFICE_MAME_RELEASES_URL"), "/"),
 		LibretroDB:   strings.TrimRight(env("BOXOFFICE_LIBRETRO_DB_URL"), "/"),
 		TitleDB:      strings.TrimRight(env("BOXOFFICE_TITLEDB_URL"), "/"),
+		HomePlaces:   env("BOXOFFICE_PLACES_URL"),
 	}
 	for _, u := range strings.Split(env("BOXOFFICE_GAME_ART_URL"), ",") {
 		if u = strings.TrimSpace(u); u != "" {

@@ -29,7 +29,8 @@
     "iconsOnly": "Alleen pictogrammen",
     "version": "Box Office {{version}}",
     "games": "Games",
-    "importFiles": "Bestanden importeren"
+    "importFiles": "Bestanden importeren",
+    "photos": "Foto's en video's"
   },
   "app": {
     "notAnswering": "Box Office reageert niet: {{error}}",
@@ -1043,7 +1044,8 @@
       "series": "Scannen zoekt naar series die al in een map staan maar niet op de lijst, zodat je ze kunt toevoegen waar ze staan.",
       "music": "Scannen zoekt naar artiesten die al in een map staan maar niet op de lijst, zodat je ze kunt toevoegen waar ze staan.",
       "books": "Scannen zoekt naar auteurs die al in een map staan maar niet op de lijst, zodat je ze kunt toevoegen waar ze staan.",
-      "game": "Controleren zoekt in deze map naar de games van elk systeem, zoals roms/mame en roms/snes, en vergelijkt ze met de lijsten van MAME en No-Intro. Je bestanden worden nooit gewijzigd."
+      "game": "Controleren zoekt in deze map naar de games van elk systeem, zoals roms/mame en roms/snes, en vergelijkt ze met de lijsten van MAME en No-Intro. Je bestanden worden nooit gewijzigd.",
+      "home": "Box Office zoekt in deze mappen naar foto's en video's wanneer er een wordt toegevoegd, wanneer je op de pagina Foto's en video's op Scannen drukt, en twee keer per dag. Je bestanden worden nooit gewijzigd."
     },
     "newShows": "Nieuwe series",
     "newShowsSub": "Naar welke afleveringen Box Office uitkijkt als een serie wordt toegevoegd, hier of via een verzoek uit Matinee. Een langlopende serie kan honderden oude afleveringen hebben; alleen naar de laatste paar seizoenen uitkijken houdt de bibliotheekpatrouille en upgrades bij wat je waarschijnlijk gaat kijken. Je kunt nog steeds iets anders kiezen bij het toevoegen van een serie, en seizoenen aan- of uitzetten op de pagina van de serie. Series die al op de lijst staan, houden wat ze hebben.",
@@ -1163,7 +1165,8 @@
       "moving": "Database wordt verhuisd…",
       "movingSub": "Box Office opent weer zodra alles gekopieerd en gecontroleerd is.",
       "moveTitle": "De database verhuizen?"
-    }
+    },
+    "homeLayout": "Kies de map met je foto's en video's, zoals een share waar je telefoon een back-up naar maakt. Submappen zijn geen probleem: Box Office leest de opnamedatum uit het bestand zelf."
   },
   "mediaTypes": {
     "music": {
@@ -1185,6 +1188,10 @@
     "game": {
       "name": "Games",
       "summary": "Bekijk je verzameling videogames: arcadesets uit MAME en consolegames, gecontroleerd en met hoesafbeelding."
+    },
+    "home": {
+      "name": "Eigen video's en foto's",
+      "summary": "Bewaar je eigen foto's en video's op één plek: een tijdlijn, albums die voor je worden gemaakt en gevonden kopieën."
     }
   },
   "conn": {
@@ -2484,6 +2491,115 @@
       "missing": "Nog niet gevonden; opnieuw zoeken {{when}}",
       "waiting": "Gevonden; downloaden {{when}}",
       "pending": "Nog niet opgezocht"
+    }
+  },
+  "home": {
+    "sub": "{{photos}} en {{videos}}, {{size}}",
+    "photos_one": "{{count}} foto",
+    "photos_other": "{{count}} foto's",
+    "videos_one": "{{count}} video",
+    "videos_other": "{{count}} video's",
+    "items_one": "{{count}} foto of video",
+    "items_other": "{{count}} foto's en video's",
+    "scanAgain": "Scannen",
+    "none": "Nog geen foto's of video's",
+    "noneBody": "Box Office bewaart je eigen foto's en video's op één plek. Het leest wanneer en waar elke opname is gemaakt, zet opnames van hetzelfde moment in albums en vindt kopieën van dezelfde foto. Je bestanden worden niet gewijzigd.",
+    "addRoot": "Voeg de map met je foto's en video's toe onder <link>Instellingen → Hoofdmappen voor eigen video's en foto's</link>.",
+    "nothingFound": "Geen foto's of video's gevonden",
+    "nothingFoundBody": "Box Office heeft geen foto's of video's gevonden in je hoofdmappen. Controleer of de map ze bevat en druk dan op Scannen.",
+    "noneOfKind": "Hier nog geen van.",
+    "tab": {
+      "timeline": "Tijdlijn",
+      "albums": "Albums",
+      "copies": "Kopieën"
+    },
+    "scan": {
+      "finding": "Foto's en video's zoeken…",
+      "reading": "Foto's en video's lezen en miniaturen maken…",
+      "places": "Plaatsen van opnames een naam geven…",
+      "albums": "Samen gemaakte foto's in albums zetten…",
+      "count": "{{done}} van {{total}}",
+      "skipped": "Box Office kon niet overal in {{folders}} kijken en heeft daarom alles bewaard wat het daarvan al had.",
+      "failed_one": "{{count}} bestand kon niet worden gelezen.",
+      "failed_other": "{{count}} bestanden konden niet worden gelezen."
+    },
+    "kind": {
+      "label": "Tonen",
+      "all": "Alles",
+      "photos": "Foto's",
+      "videos": "Video's",
+      "photo": "Foto",
+      "video": "Video"
+    },
+    "pick": "Selecteren",
+    "pickDay": "Hele dag selecteren",
+    "picked_one": "{{count}} geselecteerd",
+    "picked_other": "{{count}} geselecteerd",
+    "addToAlbum": "Aan album toevoegen",
+    "addTitle_one": "{{count}} aan een album toevoegen",
+    "addTitle_other": "{{count}} aan een album toevoegen",
+    "view": {
+      "info": "Info",
+      "previous": "Vorige",
+      "next": "Volgende",
+      "camera": "Camera",
+      "size": "Afmetingen",
+      "file": "Bestand",
+      "folder": "Map",
+      "inAlbums": "In albums",
+      "download": "Origineel downloaden",
+      "guessedDate": "Het bestand zegt niet wanneer het is gemaakt, dus dit is wanneer het bestand voor het laatst is gewijzigd.",
+      "cantShow": "Je browser kan dit soort foto niet tonen.",
+      "cantPlay": "Je browser kan deze video niet afspelen. Download hem om te kijken, of speel hem af in Matinee."
+    },
+    "album": {
+      "untitled": "Album",
+      "label": "Album",
+      "new": "Nieuw album",
+      "name": "Naam",
+      "nameHint": "Bijvoorbeeld Tuin 2024 of Oma's 80ste.",
+      "newHint": "Bijvoorbeeld Tuin 2024 of Oma's 80ste. Voeg foto's toe vanuit de tijdlijn: druk op Selecteren, kies ze en daarna Aan album toevoegen.",
+      "make": "Album maken",
+      "yours": "Jouw albums",
+      "noneYours": "Nog geen. Maak er een of selecteer foto's in de tijdlijn en voeg ze aan een album toe.",
+      "events": "Gemaakt door Box Office",
+      "eventsSub": "Foto's en video's die samen zijn gemaakt, zoals een dagje uit of een reis, gevonden aan de hand van wanneer en waar ze zijn gemaakt.",
+      "noneEvents": "Nog geen. Box Office maakt er een van 8 of meer foto's van hetzelfde dagje uit of dezelfde reis.",
+      "rename": "Naam wijzigen",
+      "renameEventHint": "Laat leeg om weer {{name}} te tonen.",
+      "delete": "Album verwijderen",
+      "deleteTitle": "Dit album verwijderen?",
+      "deleteBody": "{{name}} wordt verwijderd. De foto's en video's blijven waar ze zijn, in de tijdlijn en op schijf.",
+      "hide": "Opbergen",
+      "hideTitle": "Dit album opbergen?",
+      "hideBody": "Het verdwijnt uit de lijst met albums en Box Office maakt het niet opnieuw. De foto's en video's blijven waar ze zijn.",
+      "unhide": "Terugzetten",
+      "hiddenNote": "Dit album is opgeborgen. Zet het terug om het weer bij de andere te tonen.",
+      "eventNote": "Box Office heeft dit album gemaakt van foto's die samen zijn genomen. Geef het een andere naam om een eigen naam te houden.",
+      "takeOut": "Uit album halen",
+      "emptyTitle": "Dit album is leeg",
+      "emptyBody": "Ga naar de <link>tijdlijn</link>, druk op Selecteren, kies foto's en video's en daarna Aan album toevoegen."
+    },
+    "copies": {
+      "intro": "Dezelfde foto of video die meer dan eens is bewaard. Box Office houdt van elk de grootste kopie en vinkt de andere aan. Verplaatste kopieën gaan naar de .recycle-map van de hoofdmap, zodat je ze kunt terughalen tot die wordt geleegd.",
+      "none": "Geen kopieën gevonden",
+      "noneBody": "Elke foto en video is maar één keer bewaard.",
+      "same": "Zelfde bestand",
+      "alike": "Ziet er hetzelfde uit",
+      "groups_one": "{{count}} foto of video meer dan eens bewaard",
+      "groups_other": "{{count}} foto's en video's meer dan eens bewaard",
+      "ticked_one": "{{count}} kopie aangevinkt, {{size}}",
+      "ticked_other": "{{count}} kopieën aangevinkt, {{size}}",
+      "keep": "Bewaard",
+      "moveThis": "Naar prullenbakmap verplaatsen",
+      "look": "{{name}} bekijken",
+      "move": "Naar prullenbakmap verplaatsen",
+      "confirmTitle": "Deze kopieën verplaatsen?",
+      "confirmBody_one": "{{count}} kopie, {{size}}, gaat naar de .recycle-map van de hoofdmap.",
+      "confirmBody_other": "{{count}} kopieën, {{size}}, gaan naar de .recycle-map van hun hoofdmap.",
+      "confirmNote": "Eén kopie van elke foto en video blijft waar hij is. Leeg de prullenbakmappen in Instellingen om de ruimte vrij te maken.",
+      "moved_one": "{{count}} kopie naar de prullenbakmap verplaatst, {{size}}.",
+      "moved_other": "{{count}} kopieën naar de prullenbakmap verplaatst, {{size}}."
     }
   }
 }

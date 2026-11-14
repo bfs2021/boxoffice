@@ -29,7 +29,8 @@
     "iconsOnly": "Vain kuvakkeet",
     "version": "Box Office {{version}}",
     "games": "Pelit",
-    "importFiles": "Tuo tiedostoja"
+    "importFiles": "Tuo tiedostoja",
+    "photos": "Kuvat ja videot"
   },
   "app": {
     "notAnswering": "Box Office ei vastaa: {{error}}",
@@ -1043,7 +1044,8 @@
       "series": "Skannaus etsii sarjoja, jotka ovat jo kansiossa mutta eivät listalla, jotta voit lisätä ne paikoilleen.",
       "music": "Skannaus etsii artisteja, jotka ovat jo kansiossa mutta eivät listalla, jotta voit lisätä ne paikoilleen.",
       "books": "Skannaus etsii kirjailijoita, jotka ovat jo kansiossa mutta eivät listalla, jotta voit lisätä ne paikoilleen.",
-      "game": "Tarkista käy tämän kansion läpi ja etsii kunkin järjestelmän pelit, esimerkiksi roms/mame ja roms/snes, ja tarkistaa ne MAMEn ja No-Intron listoja vasten. Tiedostojasi ei koskaan muuteta."
+      "game": "Tarkista käy tämän kansion läpi ja etsii kunkin järjestelmän pelit, esimerkiksi roms/mame ja roms/snes, ja tarkistaa ne MAMEn ja No-Intron listoja vasten. Tiedostojasi ei koskaan muuteta.",
+      "home": "Box Office etsii näistä kansioista kuvia ja videoita, kun kansio lisätään, kun painat Käy läpi -painiketta Kuvat ja videot -sivulla, ja kahdesti päivässä. Tiedostojasi ei koskaan muuteta."
     },
     "newShows": "Uudet sarjat",
     "newShowsSub": "Mitä jaksoja Box Office seuraa, kun sarja lisätään, täällä tai Matineen toiveesta. Pitkään jatkuneella sarjalla voi olla satoja vanhoja jaksoja; vain viimeisimpien kausien seuraaminen pitää kirjastopartion ja päivitykset siinä, mitä todennäköisesti katsot. Voit silti valita jotain muuta sarjaa lisätessäsi ja kytkeä kausia päälle tai pois sarjan sivulta. Listalla jo olevat sarjat säilyttävät sen, mitä niillä on.",
@@ -1163,7 +1165,8 @@
       "moving": "Siirretään tietokantaa…",
       "movingSub": "Box Office avautuu taas, kun kaikki on kopioitu ja tarkistettu.",
       "moveTitle": "Siirretäänkö tietokanta?"
-    }
+    },
+    "homeLayout": "Valitse kansio, jossa kuvasi ja videosi ovat, esimerkiksi jako, johon puhelimesi varmuuskopioi. Alikansiot eivät haittaa: Box Office lukee kuvausajan itse tiedostosta."
   },
   "mediaTypes": {
     "music": {
@@ -1185,6 +1188,10 @@
     "game": {
       "name": "Pelit",
       "summary": "Katso videopelikokoelmaasi: MAMEn pelihallisarjat ja konsolipelit tarkistettuina ja kansikuvineen."
+    },
+    "home": {
+      "name": "Omat videot ja kuvat",
+      "summary": "Pidä omat kuvasi ja videosi yhdessä paikassa: aikajana, sinulle tehdyt albumit ja löydetyt kopiot."
     }
   },
   "conn": {
@@ -2484,6 +2491,115 @@
       "missing": "Ei vielä löytynyt; haetaan uudelleen {{when}}",
       "waiting": "Löytyi; ladataan {{when}}",
       "pending": "Ei vielä haettu"
+    }
+  },
+  "home": {
+    "sub": "{{photos}} ja {{videos}}, {{size}}",
+    "photos_one": "{{count}} kuva",
+    "photos_other": "{{count}} kuvaa",
+    "videos_one": "{{count}} video",
+    "videos_other": "{{count}} videota",
+    "items_one": "{{count}} kuva tai video",
+    "items_other": "{{count}} kuvaa ja videota",
+    "scanAgain": "Käy läpi",
+    "none": "Ei vielä kuvia eikä videoita",
+    "noneBody": "Box Office pitää omat kuvasi ja videosi yhdessä paikassa. Se lukee, milloin ja missä kukin on otettu, kokoaa yhdessä otetut albumeiksi ja löytää saman kuvan kopiot. Tiedostojasi ei muuteta.",
+    "addRoot": "Lisää kuviesi ja videoidesi kansio kohdassa <link>Asetukset → Omien videoiden ja kuvien juurikansiot</link>.",
+    "nothingFound": "Kuvia tai videoita ei löytynyt",
+    "nothingFoundBody": "Box Office ei löytänyt kuvia eikä videoita juurikansioistasi. Tarkista, että kansiossa on niitä, ja paina sitten Käy läpi.",
+    "noneOfKind": "Ei vielä tällaisia.",
+    "tab": {
+      "timeline": "Aikajana",
+      "albums": "Albumit",
+      "copies": "Kopiot"
+    },
+    "scan": {
+      "finding": "Etsitään kuvia ja videoita…",
+      "reading": "Luetaan kuvia ja videoita ja tehdään pikkukuvia…",
+      "places": "Nimetään kuvauspaikkoja…",
+      "albums": "Kootaan yhdessä otettuja kuvia albumeiksi…",
+      "count": "{{done}} / {{total}}",
+      "skipped": "Box Office ei päässyt katsomaan kaikkialle kohteessa {{folders}}, joten se säilytti kaiken, mitä sieltä jo tiesi.",
+      "failed_one": "{{count}} tiedostoa ei voitu lukea.",
+      "failed_other": "{{count}} tiedostoa ei voitu lukea."
+    },
+    "kind": {
+      "label": "Näytä",
+      "all": "Kaikki",
+      "photos": "Kuvat",
+      "videos": "Videot",
+      "photo": "Kuva",
+      "video": "Video"
+    },
+    "pick": "Valitse",
+    "pickDay": "Valitse koko päivä",
+    "picked_one": "{{count}} valittu",
+    "picked_other": "{{count}} valittu",
+    "addToAlbum": "Lisää albumiin",
+    "addTitle_one": "Lisää {{count}} albumiin",
+    "addTitle_other": "Lisää {{count}} albumiin",
+    "view": {
+      "info": "Tiedot",
+      "previous": "Edellinen",
+      "next": "Seuraava",
+      "camera": "Kamera",
+      "size": "Koko",
+      "file": "Tiedosto",
+      "folder": "Kansio",
+      "inAlbums": "Albumeissa",
+      "download": "Lataa alkuperäinen",
+      "guessedDate": "Tiedosto ei kerro, milloin se on otettu, joten tämä on tiedoston viimeisin muutosaika.",
+      "cantShow": "Selaimesi ei pysty näyttämään tällaista kuvaa.",
+      "cantPlay": "Selaimesi ei pysty toistamaan tätä videota. Lataa se katsottavaksi tai toista se Matineessa."
+    },
+    "album": {
+      "untitled": "Albumi",
+      "label": "Albumi",
+      "new": "Uusi albumi",
+      "name": "Nimi",
+      "nameHint": "Esimerkiksi Puutarha 2024 tai Mummon 80-vuotispäivät.",
+      "newHint": "Esimerkiksi Puutarha 2024 tai Mummon 80-vuotispäivät. Lisää kuvia aikajanalta: paina Valitse, valitse kuvat ja sitten Lisää albumiin.",
+      "make": "Luo albumi",
+      "yours": "Omat albumisi",
+      "noneYours": "Ei vielä yhtään. Luo albumi tai valitse kuvia aikajanalta ja lisää ne albumiin.",
+      "events": "Box Officen tekemät",
+      "eventsSub": "Yhdessä otetut kuvat ja videot, kuten retki tai matka, tunnistettu kuvausajan ja -paikan perusteella.",
+      "noneEvents": "Ei vielä yhtään. Box Office tekee albumin vähintään 8 kuvasta, jotka on otettu samalla retkellä tai matkalla.",
+      "rename": "Nimeä uudelleen",
+      "renameEventHint": "Jätä tyhjäksi, niin {{name}} näkyy taas.",
+      "delete": "Poista albumi",
+      "deleteTitle": "Poistetaanko tämä albumi?",
+      "deleteBody": "{{name}} poistetaan. Sen kuvat ja videot pysyvät paikallaan, aikajanalla ja levyllä.",
+      "hide": "Laita syrjään",
+      "hideTitle": "Laitetaanko tämä albumi syrjään?",
+      "hideBody": "Se poistuu albumiluettelosta, eikä Box Office tee sitä uudelleen. Sen kuvat ja videot pysyvät paikallaan.",
+      "unhide": "Palauta",
+      "hiddenNote": "Tämä albumi on laitettu syrjään. Palauta se, niin se näkyy taas muiden joukossa.",
+      "eventNote": "Box Office teki tämän albumin yhdessä otetuista kuvista. Nimeä se uudelleen, niin oma nimesi säilyy.",
+      "takeOut": "Poista albumista",
+      "emptyTitle": "Tämä albumi on tyhjä",
+      "emptyBody": "Siirry <link>aikajanalle</link>, paina Valitse, valitse kuvia ja videoita ja sitten Lisää albumiin."
+    },
+    "copies": {
+      "intro": "Sama kuva tai video tallessa useammin kuin kerran. Box Office säilyttää kustakin suurimman kopion ja merkitsee muut. Siirretyt kopiot menevät juurikansion .recycle-kansioon, joten saat ne takaisin, kunnes se tyhjennetään.",
+      "none": "Kopioita ei löytynyt",
+      "noneBody": "Jokainen kuva ja video on tallessa vain kerran.",
+      "same": "Sama tiedosto",
+      "alike": "Näyttää samalta",
+      "groups_one": "{{count}} kuva tai video tallessa useammin kuin kerran",
+      "groups_other": "{{count}} kuvaa ja videota tallessa useammin kuin kerran",
+      "ticked_one": "{{count}} kopio merkitty, {{size}}",
+      "ticked_other": "{{count}} kopiota merkitty, {{size}}",
+      "keep": "Säilytetään",
+      "moveThis": "Siirrä roskakorikansioon",
+      "look": "Katso {{name}}",
+      "move": "Siirrä roskakorikansioon",
+      "confirmTitle": "Siirretäänkö nämä kopiot?",
+      "confirmBody_one": "{{count}} kopio, {{size}}, siirretään juurikansionsa .recycle-kansioon.",
+      "confirmBody_other": "{{count}} kopiota, {{size}}, siirretään juurikansioidensa .recycle-kansioon.",
+      "confirmNote": "Yksi kopio jokaisesta kuvasta ja videosta jää paikalleen. Tyhjennä roskakorikansiot asetuksista vapauttaaksesi tilan.",
+      "moved_one": "{{count}} kopio siirretty roskakorikansioon, {{size}}.",
+      "moved_other": "{{count}} kopiota siirretty roskakorikansioon, {{size}}."
     }
   }
 }

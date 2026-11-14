@@ -31,7 +31,8 @@
     "iconsOnly": "Doar pictograme",
     "version": "Box Office {{version}}",
     "games": "Jocuri",
-    "importFiles": "Importă fișiere"
+    "importFiles": "Importă fișiere",
+    "photos": "Fotografii și videoclipuri"
   },
   "app": {
     "notAnswering": "Box Office nu răspunde: {{error}}",
@@ -1117,7 +1118,8 @@
       "series": "Scanarea caută seriale aflate deja într-un dosar care nu sunt în listă, ca să le poți adăuga acolo unde sunt.",
       "music": "Scanarea caută artiști aflați deja într-un dosar care nu sunt în listă, ca să-i poți adăuga acolo unde sunt.",
       "books": "Scanarea caută autori aflați deja într-un dosar care nu sunt în listă, ca să-i poți adăuga acolo unde sunt.",
-      "game": "Verificarea caută în acest dosar jocurile fiecărui sistem, cum ar fi roms/mame și roms/snes, și le compară cu listele MAME și No-Intro. Nu îți modifică niciodată fișierele."
+      "game": "Verificarea caută în acest dosar jocurile fiecărui sistem, cum ar fi roms/mame și roms/snes, și le compară cu listele MAME și No-Intro. Nu îți modifică niciodată fișierele.",
+      "home": "Box Office caută fotografii și videoclipuri în aceste foldere când se adaugă unul, când apeși Scanează pe pagina Fotografii și videoclipuri și de două ori pe zi. Nu îți schimbă niciodată fișierele."
     },
     "newShows": "Seriale noi",
     "newShowsSub": "Ce episoade urmărește Box Office când se adaugă un serial, aici sau printr-o cerere din Matinee. Un serial de lungă durată poate avea sute de episoade vechi; urmărirea doar a ultimelor sezoane ține patrula bibliotecii și îmbunătățirile pe ce probabil vei urmări. Poți alege altceva când adaugi un serial și poți porni sau opri sezoane din pagina serialului. Serialele aflate deja în listă își păstrează setările.",
@@ -1240,7 +1242,8 @@
       "moving": "Se mută baza de date…",
       "movingSub": "Box Office se deschide din nou după ce totul este copiat și verificat.",
       "moveTitle": "Muți baza de date?"
-    }
+    },
+    "homeLayout": "Alege folderul cu fotografiile și videoclipurile tale, de exemplu un folder partajat în care telefonul face copii de siguranță. Subfolderele nu sunt o problemă: Box Office citește data fiecăruia din fișierul însuși."
   },
   "mediaTypes": {
     "music": {
@@ -1262,6 +1265,10 @@
     "game": {
       "name": "Jocuri",
       "summary": "Vezi colecția ta de jocuri video: seturi arcade din MAME și jocuri de consolă, verificate și cu coperți."
+    },
+    "home": {
+      "name": "Videoclipuri și fotografii de familie",
+      "summary": "Păstrează-ți fotografiile și videoclipurile într-un singur loc: o cronologie, albume făcute pentru tine și copiile găsite."
     }
   },
   "conn": {
@@ -2597,6 +2604,125 @@
       "missing": "Încă negăsită; se caută din nou {{when}}",
       "waiting": "Găsită; se descarcă {{when}}",
       "pending": "Încă necăutată"
+    }
+  },
+  "home": {
+    "sub": "{{photos}} și {{videos}}, {{size}}",
+    "photos_few": "{{count}} fotografii",
+    "photos_one": "{{count}} fotografie",
+    "photos_other": "{{count}} de fotografii",
+    "videos_few": "{{count}} videoclipuri",
+    "videos_one": "{{count}} videoclip",
+    "videos_other": "{{count}} de videoclipuri",
+    "items_few": "{{count}} fotografii și videoclipuri",
+    "items_one": "{{count}} fotografie sau videoclip",
+    "items_other": "{{count}} de fotografii și videoclipuri",
+    "scanAgain": "Scanează",
+    "none": "Încă nu există fotografii sau videoclipuri",
+    "noneBody": "Box Office îți păstrează fotografiile și videoclipurile într-un singur loc. Citește când și unde a fost făcut fiecare, pune în albume pe cele făcute împreună și găsește copiile aceleiași fotografii. Nu îți schimbă fișierele.",
+    "addRoot": "Adaugă folderul cu fotografiile și videoclipurile tale în <link>Setări → Foldere rădăcină pentru videoclipuri și fotografii de familie</link>.",
+    "nothingFound": "Nu s-au găsit fotografii sau videoclipuri",
+    "nothingFoundBody": "Box Office nu a găsit fotografii sau videoclipuri în folderele tale rădăcină. Verifică dacă folderul le conține, apoi apasă Scanează.",
+    "noneOfKind": "Încă nimic de acest fel.",
+    "tab": {
+      "timeline": "Cronologie",
+      "albums": "Albume",
+      "copies": "Copii"
+    },
+    "scan": {
+      "finding": "Se caută fotografii și videoclipuri…",
+      "reading": "Se citesc fotografiile și videoclipurile și se fac miniaturile…",
+      "places": "Se denumesc locurile în care au fost făcute…",
+      "albums": "Se pun în albume fotografiile făcute împreună…",
+      "count": "{{done}} din {{total}}",
+      "skipped": "Box Office nu a putut verifica tot din {{folders}}, așa că a păstrat tot ce știa deja de acolo.",
+      "failed_few": "{{count}} fișiere nu au putut fi citite.",
+      "failed_one": "{{count}} fișier nu a putut fi citit.",
+      "failed_other": "{{count}} de fișiere nu au putut fi citite."
+    },
+    "kind": {
+      "label": "Arată",
+      "all": "Toate",
+      "photos": "Fotografii",
+      "videos": "Videoclipuri",
+      "photo": "Fotografie",
+      "video": "Videoclip"
+    },
+    "pick": "Selectează",
+    "pickDay": "Selectează ziua",
+    "picked_few": "{{count}} selectate",
+    "picked_one": "{{count}} selectat",
+    "picked_other": "{{count}} selectate",
+    "addToAlbum": "Adaugă în album",
+    "addTitle_few": "Adaugă {{count}} într-un album",
+    "addTitle_one": "Adaugă {{count}} într-un album",
+    "addTitle_other": "Adaugă {{count}} într-un album",
+    "view": {
+      "info": "Detalii",
+      "previous": "Înapoi",
+      "next": "Înainte",
+      "camera": "Aparat",
+      "size": "Dimensiune",
+      "file": "Fișier",
+      "folder": "Folder",
+      "inAlbums": "În albume",
+      "download": "Descarcă originalul",
+      "guessedDate": "Fișierul nu spune când a fost făcut, așa că aceasta este data ultimei modificări a fișierului.",
+      "cantShow": "Browserul tău nu poate afișa acest tip de fotografie.",
+      "cantPlay": "Browserul tău nu poate reda acest videoclip. Descarcă-l ca să-l vezi sau redă-l în Matinee."
+    },
+    "album": {
+      "untitled": "Album",
+      "label": "Album",
+      "new": "Album nou",
+      "name": "Nume",
+      "nameHint": "De exemplu Grădina 2024 sau Bunica la 80 de ani.",
+      "newHint": "De exemplu Grădina 2024 sau Bunica la 80 de ani. Adaugă fotografii din cronologie: apasă Selectează, alege-le, apoi Adaugă în album.",
+      "make": "Creează albumul",
+      "yours": "Albumele tale",
+      "noneYours": "Încă niciunul. Creează unul sau selectează fotografii în cronologie și adaugă-le într-un album.",
+      "events": "Făcute de Box Office",
+      "eventsSub": "Fotografii și videoclipuri făcute împreună, cum ar fi o ieșire sau o călătorie, găsite după când și unde au fost făcute.",
+      "noneEvents": "Încă niciunul. Box Office face unul din 8 sau mai multe fotografii din aceeași ieșire sau călătorie.",
+      "rename": "Redenumește",
+      "renameEventHint": "Lasă gol ca să apară din nou {{name}}.",
+      "delete": "Șterge albumul",
+      "deleteTitle": "Ștergi acest album?",
+      "deleteBody": "{{name}} va fi șters. Fotografiile și videoclipurile lui rămân unde sunt, în cronologie și pe disc.",
+      "hide": "Pune deoparte",
+      "hideTitle": "Pui deoparte acest album?",
+      "hideBody": "Dispare din lista de albume, iar Box Office nu îl va mai face. Fotografiile și videoclipurile lui rămân unde sunt.",
+      "unhide": "Adu înapoi",
+      "hiddenNote": "Acest album e pus deoparte. Adu-l înapoi ca să apară din nou cu celelalte.",
+      "eventNote": "Box Office a făcut acest album din fotografii făcute împreună. Redenumește-l ca să păstreze un nume ales de tine.",
+      "takeOut": "Scoate din album",
+      "emptyTitle": "Acest album e gol",
+      "emptyBody": "Mergi la <link>cronologie</link>, apasă Selectează, alege fotografii și videoclipuri, apoi Adaugă în album."
+    },
+    "copies": {
+      "intro": "Aceeași fotografie sau același videoclip păstrat de mai multe ori. Box Office păstrează cea mai mare copie a fiecăruia și le bifează pe celelalte. Copiile mutate ajung în folderul .recycle al folderului rădăcină, așa că le poți recupera până când e golit.",
+      "none": "Nu s-au găsit copii",
+      "noneBody": "Fiecare fotografie și videoclip e păstrat o singură dată.",
+      "same": "Același fișier",
+      "alike": "Arată la fel",
+      "groups_few": "{{count}} fotografii și videoclipuri păstrate de mai multe ori",
+      "groups_one": "{{count}} fotografie sau videoclip păstrat de mai multe ori",
+      "groups_other": "{{count}} de fotografii și videoclipuri păstrate de mai multe ori",
+      "ticked_few": "{{count}} copii bifate, {{size}}",
+      "ticked_one": "{{count}} copie bifată, {{size}}",
+      "ticked_other": "{{count}} de copii bifate, {{size}}",
+      "keep": "Păstrată",
+      "moveThis": "Mută în coșul de reciclare",
+      "look": "Vezi {{name}}",
+      "move": "Mută în coșul de reciclare",
+      "confirmTitle": "Muți aceste copii?",
+      "confirmBody_few": "{{count}} copii, {{size}}, ajung în folderul .recycle al folderului lor rădăcină.",
+      "confirmBody_one": "{{count}} copie, {{size}}, ajunge în folderul .recycle al folderului ei rădăcină.",
+      "confirmBody_other": "{{count}} de copii, {{size}}, ajung în folderul .recycle al folderului lor rădăcină.",
+      "confirmNote": "O copie a fiecărei fotografii și a fiecărui videoclip rămâne unde este. Golește coșurile din Setări ca să eliberezi spațiul.",
+      "moved_few": "{{count}} copii mutate în coșul de reciclare, {{size}}.",
+      "moved_one": "{{count}} copie mutată în coșul de reciclare, {{size}}.",
+      "moved_other": "{{count}} de copii mutate în coșul de reciclare, {{size}}."
     }
   }
 }

@@ -29,7 +29,8 @@
     "iconsOnly": "Yalnızca simgeler",
     "version": "Box Office {{version}}",
     "games": "Oyunlar",
-    "importFiles": "Dosya içe aktar"
+    "importFiles": "Dosya içe aktar",
+    "photos": "Fotoğraflar ve videolar"
   },
   "app": {
     "notAnswering": "Box Office yanıt vermiyor: {{error}}",
@@ -1043,7 +1044,8 @@
       "series": "Tara, bir klasörde zaten bulunan ama listede olmayan dizileri arar, böylece onları oldukları yerde ekleyebilirsiniz.",
       "music": "Tara, bir klasörde zaten bulunan ama listede olmayan sanatçıları arar, böylece onları oldukları yerde ekleyebilirsiniz.",
       "books": "Tara, bir klasörde zaten bulunan ama listede olmayan yazarları arar, böylece onları oldukları yerde ekleyebilirsiniz.",
-      "game": "Kontrol et, bu klasörde roms/mame ve roms/snes gibi her sistemin oyunlarını arar ve onları MAME ile No-Intro listelerine göre kontrol eder. Dosyalarını asla değiştirmez."
+      "game": "Kontrol et, bu klasörde roms/mame ve roms/snes gibi her sistemin oyunlarını arar ve onları MAME ile No-Intro listelerine göre kontrol eder. Dosyalarını asla değiştirmez.",
+      "home": "Box Office bu klasörlerde fotoğraf ve video arar: bir klasör eklendiğinde, Fotoğraflar ve videolar sayfasında Tara düğmesine bastığında ve günde iki kez. Dosyalarını asla değiştirmez."
     },
     "newShows": "Yeni diziler",
     "newShowsSub": "Bir dizi burada veya Matinee'den bir istekle eklendiğinde Box Office'in hangi bölümleri izleyeceği. Uzun soluklu bir dizinin yüzlerce eski bölümü olabilir; yalnızca son birkaç sezonu izlemek kütüphane devriyesini ve yükseltmeleri muhtemelen izleyeceğiniz şeylerde tutar. Dizi eklerken yine başka bir şey seçebilir ve sezonları dizinin sayfasından açıp kapatabilirsiniz. Listede zaten bulunan diziler mevcut ayarlarını korur.",
@@ -1163,7 +1165,8 @@
       "moving": "Veritabanı taşınıyor…",
       "movingSub": "Her şey kopyalanıp denetlenince Box Office yeniden açılır.",
       "moveTitle": "Veritabanı taşınsın mı?"
-    }
+    },
+    "homeLayout": "Fotoğraflarının ve videolarının bulunduğu klasörü seç; örneğin telefonunun yedek aldığı bir paylaşım. Alt klasörler sorun değil: Box Office her birinin çekildiği tarihi dosyanın kendisinden okur."
   },
   "mediaTypes": {
     "music": {
@@ -1185,6 +1188,10 @@
     "game": {
       "name": "Oyunlar",
       "summary": "Video oyunu koleksiyonunu gör: MAME'den atari salonu setleri ve konsol oyunları, kontrol edilmiş ve kutu resimleriyle."
+    },
+    "home": {
+      "name": "Ev videoları ve fotoğrafları",
+      "summary": "Kendi fotoğraflarını ve videolarını tek bir yerde tut: bir zaman çizelgesi, senin için hazırlanan albümler ve bulunan kopyalar."
     }
   },
   "conn": {
@@ -2484,6 +2491,115 @@
       "missing": "Henüz bulunamadı; yeniden aranacak: {{when}}",
       "waiting": "Bulundu; indirilecek: {{when}}",
       "pending": "Henüz aranmadı"
+    }
+  },
+  "home": {
+    "sub": "{{photos}} ve {{videos}}, {{size}}",
+    "photos_one": "{{count}} fotoğraf",
+    "photos_other": "{{count}} fotoğraf",
+    "videos_one": "{{count}} video",
+    "videos_other": "{{count}} video",
+    "items_one": "{{count}} fotoğraf veya video",
+    "items_other": "{{count}} fotoğraf ve video",
+    "scanAgain": "Tara",
+    "none": "Henüz fotoğraf veya video yok",
+    "noneBody": "Box Office kendi fotoğraflarını ve videolarını tek bir yerde tutar. Her birinin ne zaman ve nerede çekildiğini okur, birlikte çekilenleri albümlerde toplar ve aynı fotoğrafın kopyalarını bulur. Dosyalarını değiştirmez.",
+    "addRoot": "Fotoğraflarının ve videolarının klasörünü <link>Ayarlar → Ev videoları ve fotoğrafları kök klasörleri</link> altından ekle.",
+    "nothingFound": "Fotoğraf veya video bulunamadı",
+    "nothingFoundBody": "Box Office kök klasörlerinde fotoğraf veya video bulamadı. Klasörde olduklarından emin ol, sonra Tara düğmesine bas.",
+    "noneOfKind": "Henüz bu türden yok.",
+    "tab": {
+      "timeline": "Zaman çizelgesi",
+      "albums": "Albümler",
+      "copies": "Kopyalar"
+    },
+    "scan": {
+      "finding": "Fotoğraflar ve videolar aranıyor…",
+      "reading": "Fotoğraflar ve videolar okunuyor, küçük resimler hazırlanıyor…",
+      "places": "Çekildikleri yerler adlandırılıyor…",
+      "albums": "Birlikte çekilen fotoğraflar albümlerde toplanıyor…",
+      "count": "{{done}} / {{total}}",
+      "skipped": "Box Office {{folders}} içinin tamamına bakamadı, bu yüzden oradan bildiği her şeyi korudu.",
+      "failed_one": "{{count}} dosya okunamadı.",
+      "failed_other": "{{count}} dosya okunamadı."
+    },
+    "kind": {
+      "label": "Göster",
+      "all": "Tümü",
+      "photos": "Fotoğraflar",
+      "videos": "Videolar",
+      "photo": "Fotoğraf",
+      "video": "Video"
+    },
+    "pick": "Seç",
+    "pickDay": "Tüm günü seç",
+    "picked_one": "{{count}} seçildi",
+    "picked_other": "{{count}} seçildi",
+    "addToAlbum": "Albüme ekle",
+    "addTitle_one": "{{count}} öğeyi albüme ekle",
+    "addTitle_other": "{{count}} öğeyi albüme ekle",
+    "view": {
+      "info": "Bilgi",
+      "previous": "Önceki",
+      "next": "Sonraki",
+      "camera": "Kamera",
+      "size": "Boyut",
+      "file": "Dosya",
+      "folder": "Klasör",
+      "inAlbums": "Albümlerde",
+      "download": "Orijinali indir",
+      "guessedDate": "Dosya ne zaman çekildiğini söylemiyor; bu, dosyanın son değiştirildiği zaman.",
+      "cantShow": "Tarayıcın bu tür fotoğrafı gösteremiyor.",
+      "cantPlay": "Tarayıcın bu videoyu oynatamıyor. İzlemek için indir ya da Matinee'de oynat."
+    },
+    "album": {
+      "untitled": "Albüm",
+      "label": "Albüm",
+      "new": "Yeni albüm",
+      "name": "Ad",
+      "nameHint": "Örneğin Bahçe 2024 veya Babaannemin 80. yaşı.",
+      "newHint": "Örneğin Bahçe 2024 veya Babaannemin 80. yaşı. Zaman çizelgesinden fotoğraf ekle: Seç'e bas, fotoğrafları seç, sonra Albüme ekle.",
+      "make": "Albümü oluştur",
+      "yours": "Albümlerin",
+      "noneYours": "Henüz yok. Bir tane oluştur ya da zaman çizelgesinde fotoğraf seçip bir albüme ekle.",
+      "events": "Box Office'in hazırladıkları",
+      "eventsSub": "Bir gezi ya da seyahat gibi birlikte çekilen fotoğraflar ve videolar, ne zaman ve nerede çekildiklerine göre bulunur.",
+      "noneEvents": "Henüz yok. Box Office aynı gezi ya da seyahatten 8 veya daha fazla fotoğrafla bir albüm hazırlar.",
+      "rename": "Yeniden adlandır",
+      "renameEventHint": "{{name}} adının yeniden görünmesi için boş bırak.",
+      "delete": "Albümü sil",
+      "deleteTitle": "Bu albüm silinsin mi?",
+      "deleteBody": "{{name}} silinecek. Fotoğrafları ve videoları zaman çizelgesinde ve diskte oldukları yerde kalır.",
+      "hide": "Kaldır",
+      "hideTitle": "Bu albüm kaldırılsın mı?",
+      "hideBody": "Albüm listesinden çıkar ve Box Office onu yeniden hazırlamaz. Fotoğrafları ve videoları oldukları yerde kalır.",
+      "unhide": "Geri getir",
+      "hiddenNote": "Bu albüm kaldırıldı. Diğerleriyle birlikte yeniden görünmesi için geri getir.",
+      "eventNote": "Box Office bu albümü birlikte çekilen fotoğraflardan hazırladı. Kendi adını koymak için yeniden adlandır.",
+      "takeOut": "Albümden çıkar",
+      "emptyTitle": "Bu albüm boş",
+      "emptyBody": "<link>Zaman çizelgesine</link> git, Seç'e bas, fotoğraf ve video seç, sonra Albüme ekle."
+    },
+    "copies": {
+      "intro": "Aynı fotoğraf veya video birden fazla kez saklanmış. Box Office her birinin en büyük kopyasını tutar, diğerlerini işaretler. Taşınan kopyalar kök klasörün .recycle klasörüne gider; boşaltılana kadar geri alabilirsin.",
+      "none": "Kopya bulunamadı",
+      "noneBody": "Her fotoğraf ve video yalnızca bir kez saklanıyor.",
+      "same": "Aynı dosya",
+      "alike": "Aynı görünüyor",
+      "groups_one": "{{count}} fotoğraf veya video birden fazla kez saklanmış",
+      "groups_other": "{{count}} fotoğraf ve video birden fazla kez saklanmış",
+      "ticked_one": "{{count}} kopya işaretli, {{size}}",
+      "ticked_other": "{{count}} kopya işaretli, {{size}}",
+      "keep": "Tutuluyor",
+      "moveThis": "Geri dönüşüm klasörüne taşı",
+      "look": "{{name}} öğesine bak",
+      "move": "Geri dönüşüm klasörüne taşı",
+      "confirmTitle": "Bu kopyalar taşınsın mı?",
+      "confirmBody_one": "{{count}} kopya, {{size}}, kök klasörünün .recycle klasörüne gider.",
+      "confirmBody_other": "{{count}} kopya, {{size}}, kök klasörlerinin .recycle klasörüne gider.",
+      "confirmNote": "Her fotoğraf ve videonun bir kopyası olduğu yerde kalır. Alanı boşaltmak için Ayarlar'daki geri dönüşüm klasörlerini boşalt.",
+      "moved_one": "{{count}} kopya geri dönüşüm klasörüne taşındı, {{size}}.",
+      "moved_other": "{{count}} kopya geri dönüşüm klasörüne taşındı, {{size}}."
     }
   }
 }
