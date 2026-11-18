@@ -271,7 +271,7 @@ func (s *Service) pass(ctx context.Context) error {
 		if err := s.look(ctx, c, providers, j); err != nil {
 			return err
 		}
-		s.Store.AddSubtitleUse(ctx, "", 1, 0)
+		s.Store.AddSubtitleUse(ctx, store.DataDay(s.now()), "", 1, 0)
 		left--
 		s.mu.Lock()
 		s.done++
@@ -420,7 +420,7 @@ func (s *Service) look(ctx context.Context, c Config, providers []Provider, j jo
 			continue
 		}
 		res, err := p.Search(ctx, q)
-		s.Store.AddSubtitleUse(ctx, p.Name(), 1, 0)
+		s.Store.AddSubtitleUse(ctx, store.DataDay(s.now()), p.Name(), 1, 0)
 		searched++
 		found = append(found, res...)
 		if err != nil {
@@ -465,7 +465,7 @@ func (s *Service) look(ctx context.Context, c Config, providers []Provider, j jo
 				s.Log.Warn("subtitles: download failed", "provider", cand.Provider, "title", f.Title, "err", err)
 				continue
 			}
-			s.Store.AddSubtitleUse(ctx, cand.Provider, 0, 1)
+			s.Store.AddSubtitleUse(ctx, store.DataDay(s.now()), cand.Provider, 0, 1)
 			path, err := Save(f.Path, lang, cand.SDH, name, data)
 			if err != nil {
 				s.Log.Warn("subtitles: couldn't save", "path", f.Path, "language", lang, "err", err)

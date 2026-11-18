@@ -17,6 +17,7 @@ import (
 
 	"github.com/yeixio/boxoffice/internal/arrapi"
 	"github.com/yeixio/boxoffice/internal/flush"
+	"github.com/yeixio/boxoffice/internal/library"
 	"github.com/yeixio/boxoffice/internal/quality"
 	"github.com/yeixio/boxoffice/internal/store"
 	"github.com/yeixio/boxoffice/internal/usenet/screen"
@@ -275,7 +276,8 @@ func (li *LibraryImporter) Import(ctx context.Context, d store.Download, dir str
 			if ep.Title != "" {
 				name += " - " + cleanFileName(ep.Title)
 			}
-			dest := filepath.Join(t.Path, fmt.Sprintf("Season %02d", season), name+strings.ToLower(filepath.Ext(v)))
+			folder := library.SeasonFolder(t.Path, season, fmt.Sprintf("Season %02d", season))
+			dest := filepath.Join(t.Path, folder, name+strings.ToLower(filepath.Ext(v)))
 			if err := li.place(ctx, dir, v, dest, t.RootFolder, t.Path, "episode", ep.ID, q, ep.File); err != nil {
 				return "", err
 			}

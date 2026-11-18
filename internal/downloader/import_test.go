@@ -211,6 +211,38 @@ func TestImportObfuscatedEpisode(t *testing.T) {
 	}
 }
 
+// An episode goes into the season's folder already in the show's folder,
+// however it's written ("Season 3"), not a second "Season 03" beside it.
+func TestImportEpisodeIntoExistingSeasonFolder(t *testing.T) {
+	st := storetest.Open(t)
+	ctx := context.Background()
+	lib := t.TempDir()
+	profiles, _ := st.Profiles(ctx)
+	show, err := st.AddSeries(ctx, store.Series{TMDBID: 3, Title: "Schitt's Creek", Year: 2015, ProfileID: profiles[0].ID, RootFolder: lib, Path: filepath.Join(lib, "Schitt's Creek"), Monitored: true, Seasons: []store.Season{{Number: 3, Monitored: true}}})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err := st.UpsertEpisode(ctx, store.Episode{SeriesID: show.ID, Season: 3, Number: 2, Title: "Driving Test", Monitored: true}); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.MkdirAll(filepath.Join(show.Path, "Season 3"), 0o755); err != nil {
+		t.Fatal(err)
+	}
+	dl := t.TempDir()
+	os.WriteFile(filepath.Join(dl, "Schitts.Creek.S03E02.1080p.WEB-DL.mkv"), make([]byte, 5000), 0o644)
+	li := &LibraryImporter{Store: st}
+	to, err := li.Import(ctx, store.Download{Kind: "series", TitleID: show.ID, Name: "Schitts.Creek.S03E02.1080p.WEB-DL.DD5.1.H.264-NTb"}, dl, listFiles(dl))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if want := filepath.Join(show.Path, "Season 3", "Schitt's Creek (2015) - S03E02 - Driving Test.mkv"); to != want {
+		t.Fatalf("to %s, want %s", to, want)
+	}
+	if fileExists(filepath.Join(show.Path, "Season 03")) {
+		t.Fatal("made a second season folder")
+	}
+}
+
 // A season pack whose videos are all named with hashes goes in by what
 // the videos' tags say; one that can't be told apart stays in the
 // downloads folder, and the import says so.
