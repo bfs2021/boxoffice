@@ -36,6 +36,7 @@ import (
 	"strings"
 	"unicode"
 
+	libfolders "github.com/yeixio/boxoffice/internal/library"
 	"github.com/yeixio/boxoffice/internal/store"
 	"golang.org/x/text/unicode/norm"
 )
@@ -308,7 +309,9 @@ type finder struct {
 	// extras the folders looked through with a title's own (by title).
 	linked map[string]int64
 	extras map[int64][]string
-	out    []Problem
+	// seasons are the subfolders of show folders, read once each.
+	seasons map[string][]string
+	out     []Problem
 }
 
 type recorded struct {
@@ -780,9 +783,29 @@ func (f *finder) expected(t *store.LibraryTitle, tf store.TitleFile, path string
 		if tf.EpisodeTitle != "" && len(numbers) == 1 {
 			name += " - " + cleanFileName(tf.EpisodeTitle)
 		}
-		return filepath.Join(t.Path, seasonFolder(tf.Season), name+ext)
+		return filepath.Join(t.Path, f.seasonFolder(t.Path, tf.Season), name+ext)
 	}
 	return ""
+}
+
+// seasonFolder is where a show's season goes: the folder already there
+// for it, however it's written, or Box Office's own name for it.
+func (f *finder) seasonFolder(show string, n int) string {
+	dirs, ok := f.seasons[show]
+	if !ok {
+		if entries, err := os.ReadDir(show); err == nil {
+			for _, e := range entries {
+				if e.IsDir() {
+					dirs = append(dirs, e.Name())
+				}
+			}
+		}
+		if f.seasons == nil {
+			f.seasons = map[string][]string{}
+		}
+		f.seasons[show] = dirs
+	}
+	return libfolders.SeasonFolderIn(dirs, n, seasonFolder(n))
 }
 
 func seasonFolder(n int) string {

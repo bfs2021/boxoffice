@@ -367,14 +367,15 @@ func TestEpisodesNamedForAnotherSeason(t *testing.T) {
 		t.Fatalf("S02E01 after putting back %+v", e.File)
 	}
 
-	// Cunk on Britain's first episode is season 1's, moved in.
+	// Cunk on Britain's first episode is season 1's, moved in: into the
+	// show's own "Season 1", not a second "Season 01" beside it.
 	var b *Problem
 	for i := range untracked {
 		if untracked[i].Files[0].Path == britain1 {
 			b = &untracked[i]
 		}
 	}
-	if b == nil || b.Files[0].Episode != "S01E01" || b.Fix.Moves[0].To != filepath.Join(l.tv, "Cunk on... (2018)", "Season 01", "Cunk on... (2018) - S01E01 - Beginnings.mp4") {
+	if b == nil || b.Files[0].Episode != "S01E01" || b.Fix.Moves[0].To != filepath.Join(l.tv, "Cunk on... (2018)", "Season 1", "Cunk on... (2018) - S01E01 - Beginnings.mp4") {
 		t.Fatalf("Cunk on Britain's first: %+v", b)
 	}
 }
