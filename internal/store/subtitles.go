@@ -224,19 +224,22 @@ type SubtitleUse struct {
 	Downloads int `json:"downloads"`
 }
 
-// AddSubtitleUse counts lookups today; provider "" counts files.
-func (s *Store) AddSubtitleUse(ctx context.Context, provider string, searches, downloads int) error {
+// AddSubtitleUse counts lookups on a day (as DataDay writes it); provider
+// "" counts files.
+func (s *Store) AddSubtitleUse(ctx context.Context, day, provider string, searches, downloads int) error {
 	_, err := s.exec(ctx, `INSERT INTO subtitle_usage (day, provider, searches, downloads) VALUES (?, ?, ?, ?)
 		ON CONFLICT (day, provider) DO UPDATE SET searches = subtitle_usage.searches + excluded.searches,
 			downloads = subtitle_usage.downloads + excluded.downloads`,
-		DataDay(time.Now()), provider, searches, downloads)
+		day, provider, searches, downloads)
 	return err
 }
 
 // SubtitleUseOn is a day's lookups (as DataDay writes it), by provider.
-// Days before the week before are forgotten.
+// Days more than a week before it are forgotten.
 func (s *Store) SubtitleUseOn(ctx context.Context, day string) (map[string]SubtitleUse, error) {
-	s.exec(ctx, "DELETE FROM subtitle_usage WHERE day < ?", DataDay(time.Now().AddDate(0, 0, -7)))
+	if d, err := time.Parse(time.DateOnly, day); err == nil {
+		s.exec(ctx, "DELETE FROM subtitle_usage WHERE day < ?", d.AddDate(0, 0, -7).Format(time.DateOnly))
+	}
 	rows, err := s.query(ctx, "SELECT provider, searches, downloads FROM subtitle_usage WHERE day = ?", day)
 	if err != nil {
 		return nil, err
